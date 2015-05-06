@@ -24,9 +24,14 @@ public abstract class GameCharacter : GameObject, IComparable<GameCharacter>
  	        return _id - other._id;
         }
 
+        public CharacterAttributes getAttributes()
+        {
+            return this.attributes;
+        }
+
         public override string ToString()
         {
             return GetName() + " " + _id;
-        }   
+        }
     }
 }

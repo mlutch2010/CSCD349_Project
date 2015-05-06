@@ -2,14 +2,6 @@
 {
     public sealed class Cell
     {
-
-
-
-
-
-
-
-
         private Map _MyMap;
         private int[] _coordinates;
 

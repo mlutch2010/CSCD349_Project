@@ -17,13 +17,7 @@ namespace CSCD349Project
             myAttributes._basePower  = 5;
             myAttributes._power      = 5;
             myAttributes.SetIsGoodGuy(true);
-            myAttributes.SetActiveAttack(new WarriorAttack1());      
-        }
-        private class WarriorAttack1: Ability
-        {
-            public WarriorAttack1() { }
-            
-
+            myAttributes.SetActiveAttack(new WarriorSlash());
         }
     }
     
