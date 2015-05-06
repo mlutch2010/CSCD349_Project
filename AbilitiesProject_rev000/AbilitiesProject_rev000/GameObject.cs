@@ -9,8 +9,6 @@ namespace CSCD349Project
         //private GameObjectType _type{get;set;}
         private string _name;
 
-
-
         public string GetName() { return _name; }
 
         public Cell GetCell() { return _occupyingCell; }
@@ -43,13 +41,4 @@ namespace CSCD349Project
         }
         
     }
-
-
-
-
-
-
-
-
-
 }
