@@ -26,13 +26,26 @@ namespace CSCD349Project
             CharacterAttributes attackerAttributes = attacker.getAttributes();
             CharacterAttributes defenderAttributes = defender.getAttributes();
             
+            //Enough Energy?
             if(attackerAttributes._energy >= this._energyRequired)
             {
+                //Succesful Attack?
                 if(attackSuccessful(this._successRate))
                 {
                     attackerAttributes._energy -= this._energyRequired;
 
-                    double healthLost = attackerAttributes._power * this._baseDamage - defenderAttributes._armor;
+                    Double healthLost = 0.0;
+                    //Succesful Defense?
+                    if(defenseSuccessful(defenderAttributes.getActiveDefense()._successRate))
+                    {
+                        healthLost = attackerAttributes._power * this._baseDamage - defenderAttributes._armor;
+                        healthLost -= defenderAttributes.getActiveDefense()._armorIncrease;
+                    }
+                    else
+                    {
+                        healthLost = attackerAttributes._power * this._baseDamage - defenderAttributes._armor;
+                    }
+
                     defenderAttributes._health -= healthLost;
                 }
                 else
