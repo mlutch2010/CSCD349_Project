@@ -61,22 +61,12 @@ namespace CSCD349Project
             }
         }
 
-        private bool attackSuccessful(Double attackSuccessRate)
+        private bool attackSuccessful()
         {
             Random rnd = new Random();
             int percentChance = rnd.Next(0, 101);//generate random number between 0 and 100
 
-            if (percentChance >= attackSuccessRate*100)
-                return true;
-            return false;
-        }
-
-        private bool defenseSuccessful(Double defenseSuccessRate)
-        {
-            Random rnd = new Random();
-            int percentChance = rnd.Next(0, 101);//generate random number between 0 and 100
-
-            if (percentChance >= defenseSuccessRate*100)
+            if (percentChance >= this._successRate*100)
                 return true;
             return false;
         }

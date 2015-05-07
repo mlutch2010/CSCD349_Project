@@ -9,5 +9,6 @@ namespace CSCD349Project
     interface IAttack
     {
         public void attack(GameCharacter attacker, GameCharacter defender);
+        private bool attackSuccessful();
     }
 }

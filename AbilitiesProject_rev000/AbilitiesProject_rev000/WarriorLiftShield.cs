@@ -25,6 +25,16 @@ namespace CSCD349Project
             defenderAttributes._setHealth(healthLost);
         }
 
+        public bool defenseSuccessful()
+        {
+            Random rnd = new Random();
+            int percentChance = rnd.Next(0, 101);//generate random number between 0 and 100
+
+            if (percentChance >= this._successRate*100)
+                return true;
+            return false;
+        }
+
         public Double _armorIncrease
         { get { return _armorIncreash; } }
 

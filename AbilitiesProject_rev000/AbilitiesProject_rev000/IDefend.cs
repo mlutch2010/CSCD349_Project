@@ -9,5 +9,6 @@ namespace CSCD349Project
     interface IDefend
     {
         public void defend(GameCharacter defender);
+        public bool defenseSuccessful();
     }
 }
