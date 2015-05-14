@@ -6,3 +6,4 @@ Y:\CSCD 349\Project\5-14-2015\AbilitiesProject_rev000\AbilitiesProject_rev000\bi
 Y:\CSCD 349\Project\5-14-2015\AbilitiesProject_rev000\AbilitiesProject_rev000\bin\Debug\AbilitiesProject_rev000.pdb
 Y:\CSCD 349\Project\5-14-2015\AbilitiesProject_rev000\AbilitiesProject_rev000\obj\Debug\AbilitiesProject_rev000.exe
 Y:\CSCD 349\Project\5-14-2015\AbilitiesProject_rev000\AbilitiesProject_rev000\obj\Debug\AbilitiesProject_rev000.pdb
+Y:\CSCD 349\Project\5-14-2015\AbilitiesProject_rev000\AbilitiesProject_rev000\obj\Debug\AbilitiesProject_rev000.csprojResolveAssemblyReference.cache

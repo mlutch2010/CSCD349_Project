@@ -44,7 +44,7 @@
     <Compile Include="AttackUnsuccesfulException.cs" />
     <Compile Include="Cell.cs" />
     <Compile Include="CharacterAttributes.cs" />
-    <Compile Include="ConcreteGameCharacters.cs" />
+    <Compile Include="Warrior.cs" />
     <Compile Include="GameCharacter.cs" />
     <Compile Include="GameItem.cs" />
     <Compile Include="GameObject.cs" />

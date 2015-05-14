@@ -18,7 +18,7 @@ namespace CSCD349Project
             myAttributes._power      = 5;
             myAttributes.SetIsGoodGuy(true);
             myAttributes.SetActiveAttack(new WarriorSlash());
+            setAttributes(myAttributes);
         }
     }
-    
 }

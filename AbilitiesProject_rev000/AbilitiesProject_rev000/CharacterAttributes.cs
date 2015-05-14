@@ -61,8 +61,11 @@ namespace CSCD349Project
         }
         public Double _armor
         {
-            get { return _armor; }
+            get { return _Armor; }
+            set { _Armor = value; }
             //MICHAEL!!! I don't understand this setter crap. Help me out? LOL.
+            // this still needs work, we need to validate the new value of _Armor
+        
         }
         
         // methods
