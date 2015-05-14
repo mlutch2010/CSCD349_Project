@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace CSCD349Project
 {
-    interface IAttack
+    public interface IAttack
     {
-        public void attack(GameCharacter attacker, GameCharacter defender);
-        private bool attackSuccessful();
+        void attack(GameCharacter attacker, GameCharacter defender);
+        bool attackSuccessful();
     }
 }

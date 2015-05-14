@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace CSCD349Project
 {
-    interface IDefend
+    public interface IDefend
     {
-        public void defend(GameCharacter defender);
-        public bool defenseSuccessful();
+        void defend(GameCharacter defender);
+        bool defenseSuccessful();
     }
 }

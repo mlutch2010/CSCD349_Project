@@ -14,16 +14,16 @@ namespace CSCD349Project
         private bool _isGoodGuy;
         private List<IAttack> _attacks;
         private IAttack _activeAttack;
-        private List<IAttack> _defenses;
-        private IAttack _activeDefense;
+        private List<IDefend> _defenses;
+        private IDefend _activeDefense;
 
         // constructors
         public CharacterAttributes()
         {
             _attacks = new List<IAttack>();
-            _defenses = new List<IDefense>();
-            _activeAttack = new NullAbility();
-            _activeAttack = new NullAbility();
+            _defenses = new List<IDefend>();
+            _activeAttack = new NullAttack();
+            _activeDefense = new NullDefend();
         }
 
         // properties

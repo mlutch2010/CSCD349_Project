@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CSCD349Project
 {
-	class WarriorSlash : IAttack
+	public class WarriorSlash : IAttack
     {
         private string abilityName;
         private Double _baseDamage;

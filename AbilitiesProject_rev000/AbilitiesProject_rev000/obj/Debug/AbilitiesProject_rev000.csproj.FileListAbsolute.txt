@@ -1,2 +1,3 @@
 C:\Users\zach\Google Drive\0_SCHOOL\0_Spring 2015\CSCD349_GitHub-Project\CSCD349_Project\AbilitiesProject_rev000\AbilitiesProject_rev000\bin\Debug\AbilitiesProject_rev000.exe.config
 C:\Users\Zachary\Google Drive\0_SCHOOL\0_Spring 2015\CSCD349_GitHub-Project\CSCD349_Project\AbilitiesProject_rev000\AbilitiesProject_rev000\bin\Debug\AbilitiesProject_rev000.exe.config
+Y:\CSCD 349\Project\Abilities_and_GameCharacters\AbilitiesProject_rev000\AbilitiesProject_rev000\obj\Debug\AbilitiesProject_rev000.csprojResolveAssemblyReference.cache
