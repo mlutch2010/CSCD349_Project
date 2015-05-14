@@ -12,7 +12,7 @@ namespace CSCD349Project
         }
 
 
-        public bool attackSuccessful()
+        public bool attackSuccessful(double successRate)
         {
             //throw new NotImplementedException();
             return false;

@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AttackUnsuccesfulException.cs" />
     <Compile Include="Cell.cs" />
     <Compile Include="CharacterAttributes.cs" />
     <Compile Include="ConcreteGameCharacters.cs" />

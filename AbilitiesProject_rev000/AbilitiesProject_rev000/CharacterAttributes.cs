@@ -88,7 +88,10 @@ namespace CSCD349Project
                 return false;
             return _defenses.Remove(value);
         }
-        public void SetDefenses(List<IDefend> value) { if (value != null) _attacks = value; }
+        
+        
+        
+        //public void SetDefenses(List<IDefend> value) { if (value != null) _attacks = value; }
         public List<IDefend> GetDefenses() { return _defenses; }
     }
 }
