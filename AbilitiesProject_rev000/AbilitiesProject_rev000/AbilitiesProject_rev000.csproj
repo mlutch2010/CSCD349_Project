@@ -57,6 +57,7 @@
     <Compile Include="Party.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="tester.cs" />
+    <Compile Include="WarriorLiftShield.cs" />
     <Compile Include="WarriorSlash.cs" />
   </ItemGroup>
   <ItemGroup>

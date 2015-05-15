@@ -41,10 +41,15 @@ public abstract class GameCharacter : GameObject, IComparable<GameCharacter>
             string output = "----- Game Character    id:" + _id  + "-----\n";
             output += "name:" + GetName() + "\n";
             output += (_attributes.GetIsGoodGuy()) ? "goodguy\n" : "badguy";
-            output += _attributes._health + "\n";
-            output += _attributes._energy + "\n";
-            output += _attributes._power + "\n";
-            output += _attributes._armor + "\n";
+            output += "health: " + _attributes._health + "\n";
+            output += "energy: " + _attributes._energy + "\n";
+            output += "power: "  + _attributes._power + "\n";
+            output += "armor: "  + _attributes._armor + "\n";
+            output += "----------------------------------------------------\n";
+            
+            
+            
+            
             return output;
         }
     }

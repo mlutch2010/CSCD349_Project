@@ -10,5 +10,9 @@ namespace CSCD349Project
     {
         void defend(GameCharacter defender);
         bool defenseSuccessful();
+
+        double getDefenseRate();
+        
+    
     }
 }

@@ -5,35 +5,38 @@ namespace CSCD349Project
     {
         private Cell _occupiedCell { get; set; }
         private string _name;
-        private List<GameCharacter> _Characters;
-        public List<GameCharacter> _characters
-        {
-            get{return _Characters;}
-        }
- 
+        private List<GameCharacter> _characters;
+        private List<GameItem> _inventory;
+
         public Party(string name, Cell cell)
         {
             _name = name;
             _occupiedCell = cell;
-            _Characters = new List<GameCharacter>();
+            _characters = new List<GameCharacter>();
+            _inventory  = new List<GameItem>();
         }
 
-        public int AddPlayer(GameCharacter newCharacter)
+        public List<GameItem> GetIventory() { return _inventory; }
+        public List<GameCharacter> GetCharacters() { return _characters; }
+        public string GetName() { return _name; }
+        
+        public int AddCharacter(GameCharacter character)
         {
-            _characters.Add(newCharacter);
+            _characters.Add(character);
             return _characters.Count;
         }
         
-        public bool removePlayer(GameCharacter character)
+        public bool removeCharacter(GameCharacter character)
         {
-            return _Characters.Remove(character);
+            return _characters.Remove(character);
         }
         
         public override string ToString()
         {
             string output = "\n";
             output += "#--------- party ---------#\n";
-            output += _occupiedCell.ToString();
+            output += "cell: \n"     + _occupiedCell.ToString() + "\n";
+            output += "characters: " + string.Join("\n", (object[])_characters.ToArray());
             output += "#------------------------#\n";
             return output;
         }

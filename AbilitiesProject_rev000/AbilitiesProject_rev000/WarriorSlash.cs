@@ -30,7 +30,7 @@ namespace CSCD349Project
             if(attackerAttributes._energy >= this._energyRequired)
             {
                 //Succesful Attack?
-                if(attackSuccessful(this._successRate))
+                if(AbilitySuccessful(this._successRate))
                 {
                     attackerAttributes._energy -= this._energyRequired;
 
@@ -40,15 +40,15 @@ namespace CSCD349Project
                     
                     
                     //Succesful Defense?
-                    //if(defenseSuccessful(defenderAttributes.getActiveDefense()._successRate))
-                    //{
-                    //    healthLost = attackerAttributes._power * this._baseDamage - defenderAttributes._armor;
-                    //    healthLost -= defenderAttributes.getActiveDefense()._armorIncrease;
-                    // }
-                    //else
-                    //{
-                    //    healthLost = attackerAttributes._power * this._baseDamage - defenderAttributes._armor;
-                    //}
+                    if(AbilitySuccessful(defenderAttributes.getActiveDefense()._successRate))
+                    {
+                        healthLost = attackerAttributes._power * this._baseDamage - defenderAttributes._armor;
+                        healthLost -= defenderAttributes.getActiveDefense()._armorIncrease;
+                     }
+                    else
+                    {
+                        healthLost = attackerAttributes._power * this._baseDamage - defenderAttributes._armor;
+                    }
 
                     defenderAttributes._health -= healthLost;
                 }
@@ -65,7 +65,8 @@ namespace CSCD349Project
             }
         }
 
-        private bool attackSuccessful(double successRate)
+        
+        private bool AbilitySuccessful(double successRate)
         {
             Random rnd = new Random();
             int percentChance = rnd.Next(0, 101);//generate random number between 0 and 100
