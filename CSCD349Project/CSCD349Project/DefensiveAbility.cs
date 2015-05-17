@@ -6,9 +6,13 @@ using System.Threading.Tasks;
 
 namespace CSCD349Project
 {
-    abstract class Defend
+    public abstract class DefensiveAbility
     {
         public void defend(GameCharacter defender);
         public bool defenseSuccessful();
+
+        public Double _armorIncrease;
+
+        public Double _successRate;
     }
 }

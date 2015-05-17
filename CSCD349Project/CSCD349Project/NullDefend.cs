@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CSCD349Project
 {
-    class NullDefend: IDefend
+    public class NullDefend: DefensiveAbility
     {
 
         public void defend(GameCharacter defender)

@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace CSCD349Project
 {
-    class WarriorLiftShield : IDefend
+    public class WarriorLiftShield : DefensiveAbility
     {
-        private double _armorIncrease;
-        private double _successRate;
+        private double _ArmorIncrease;
+        private double _SuccessRate;
 
         public WarriorLiftShield()
         {
-            _armorIncrease = 5.0;//5 armor points
-            _successRate = 0.90;//90%
+            _ArmorIncrease = 5.0;//5 armor points
+            _SuccessRate = 0.90;//90%
         }
 
         //public void defend(GameCharacter defender)
@@ -26,8 +26,11 @@ namespace CSCD349Project
         /// <summary>
         /// 
         /// </summary>
-        
-        public double GetSuccessRate(){return _successRate;}
-        public double GetArmorIcrease() { return _armorIncrease; }
+
+        public Double _armorIncrease
+        { get { return _ArmorIncrease; } }
+
+        public Double _successRate
+        { get { return _SuccessRate; } }
     }
 }

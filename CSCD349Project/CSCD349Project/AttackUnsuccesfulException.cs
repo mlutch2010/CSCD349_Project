@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CSCD349Project
 {
-    class AttackUnsuccesfulException : Exception
+    public class AttackUnsuccesfulException : Exception
     {
         public AttackUnsuccesfulException(String message) : base(message) { }
         public AttackUnsuccesfulException() { }

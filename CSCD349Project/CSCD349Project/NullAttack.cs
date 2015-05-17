@@ -1,7 +1,7 @@
 ﻿using System;
 namespace CSCD349Project
 {
-    class NullAttack: IAttack
+    public class NullAttack : OffensiveAbility
     {
         public NullAttack(){}
 
