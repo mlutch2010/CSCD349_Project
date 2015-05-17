@@ -27,10 +27,16 @@ namespace CSCD349Project
         /// 
         /// </summary>
 
-        public Double _armorIncrease
-        { get { return _ArmorIncrease; } }
 
-        public Double _successRate
-        { get { return _SuccessRate; } }
+
+        public override void defend(GameCharacter defender)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override bool defenseSuccessful()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -26,6 +26,7 @@ namespace CSCD349Project
             _activeDefense = new NullDefend();
         }
 
+      
         // properties
         public void AddAttack(OffensiveAbility newAbility)
         {

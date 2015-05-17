@@ -21,13 +21,6 @@ namespace CSCD349Project
             this._EnergyRequired = 5.0;//5 energy points (ep)
         }
 
-        public Double GetBaseDamage
-        { get { return _BaseDamage; } }
 
-        public Double GetSuccessRate
-        { get { return _SuccessRate; } }
-
-        public Double GetEnergyRequired
-        { get { return _EnergyRequired; } }
     }
 }

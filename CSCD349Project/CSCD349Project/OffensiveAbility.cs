@@ -13,7 +13,29 @@ namespace CSCD349Project
         private Double _SuccessRate;
         private Double _EnergyRequired;
         
-        public void attack(GameCharacter attacker, GameCharacter defender)
+        // properties
+        public Double _successRate
+        {
+            get{return _SuccessRate;}
+            set{_SuccessRate = value;}
+        }
+
+        public Double _baseDamage
+        {
+            get { return _BaseDamage; }
+            set { _BaseDamage = value; }
+        }
+
+        public Double _energyRequired
+        {
+            get { return _EnergyRequired; }
+            set { _EnergyRequired = value; }
+        }
+
+
+
+
+        public virtual void attack(GameCharacter attacker, GameCharacter defender)
         {
             CharacterAttributes attackerAttributes = attacker.getAttributes();
             CharacterAttributes defenderAttributes = defender.getAttributes();
@@ -21,17 +43,14 @@ namespace CSCD349Project
             DefensiveAbility activeDefense = defenderAttributes.GetActiveDefense();
 
             //Enough Energy?
-            if (attackerAttributes._energy >= activeOffense.GetEnergyRequired())
+            if (attackerAttributes._energy >= activeOffense._energyRequired)//.GetEnergyRequired())
             {
                 //Succesful Attack?
-                if (AbilitySuccessful(activeOffense.GetSuccessRate))
+                if (AbilitySuccessful(activeOffense._successRate))//GetSuccessRate)));
                 {
-                    attackerAttributes._energy -= activeOffense._energyRequired;
+                    attackerAttributes._energy -= activeOffense._energyRequired;//_energyRequired;
 
                     Double healthLost = 0.0;
-
-                    /**    Zack, is Warrior slash supposed to be implementing IDefend also? **/
-
 
                     //Succesful Defense?
                     if (AbilitySuccessful(activeDefense._successRate))
@@ -69,8 +88,12 @@ namespace CSCD349Project
             return false;
         }
 
-        public abstract Double GetBaseDamage;
-        public abstract Double GetSuccessRate;
-        public abstract Double GetEnergyRequired;
+        /** Zack, I commented these becuase above it lookes like we are going with properties instead
+         *  of Java style getters/setters
+         * 
+         */
+        //public abstract Double GetBaseDamage();
+        //public abstract Double GetSuccessRate();
+        //public abstract Double GetEnergyRequired();
     }
 }

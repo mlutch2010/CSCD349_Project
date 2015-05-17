@@ -6,7 +6,7 @@ namespace CSCD349Project
         public NullAttack(){}
 
         public override string ToString() { return "null Attack"; }
-        public void attack(GameCharacter attacker, GameCharacter defender)
+        public override void attack(GameCharacter attacker, GameCharacter defender)
         {
             // perform attack
         }
@@ -17,5 +17,8 @@ namespace CSCD349Project
             //throw new NotImplementedException();
             return false;
         }
+
+   
+        
     }
 }
