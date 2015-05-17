@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CSCD349Project
 {
-	class WarriorSlash : IAttack
+	public class WarriorSlash : IAttack
     {
         private string abilityName;
         private Double _baseDamage;
@@ -30,17 +30,21 @@ namespace CSCD349Project
             if(attackerAttributes._energy >= this._energyRequired)
             {
                 //Succesful Attack?
-                if(attackSuccessful(this._successRate))
+                if(AbilitySuccessful(this._successRate))
                 {
                     attackerAttributes._energy -= this._energyRequired;
 
                     Double healthLost = 0.0;
+                    
+                    /**    Zack, is Warrior slash supposed to be implementing IDefend also? **/
+                    
+                    
                     //Succesful Defense?
-                    if(defenseSuccessful(defenderAttributes.getActiveDefense()._successRate))
+                    if(AbilitySuccessful(defenderAttributes.getActiveDefense()._successRate))
                     {
                         healthLost = attackerAttributes._power * this._baseDamage - defenderAttributes._armor;
                         healthLost -= defenderAttributes.getActiveDefense()._armorIncrease;
-                    }
+                     }
                     else
                     {
                         healthLost = attackerAttributes._power * this._baseDamage - defenderAttributes._armor;
@@ -61,7 +65,8 @@ namespace CSCD349Project
             }
         }
 
-        private bool attackSuccessful()
+        
+        private bool AbilitySuccessful(double successRate)
         {
             Random rnd = new Random();
             int percentChance = rnd.Next(0, 101);//generate random number between 0 and 100
@@ -69,6 +74,14 @@ namespace CSCD349Project
             if (percentChance >= this._successRate*100)
                 return true;
             return false;
+        }
+
+
+
+
+        bool IAttack.attackSuccessful(double successRate)
+        {
+            throw new NotImplementedException();
         }
     }
 }

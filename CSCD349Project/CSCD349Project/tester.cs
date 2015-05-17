@@ -13,7 +13,8 @@ namespace CSCD349Project
             myWarrior.SetCell(thisCell);
             Console.WriteLine(myWarrior);
 
-
+            // Wait for the user to type something...
+            Console.ReadLine();
 
         }
     }

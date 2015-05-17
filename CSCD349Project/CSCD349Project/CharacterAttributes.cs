@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 namespace CSCD349Project
 {
@@ -14,16 +14,16 @@ namespace CSCD349Project
         private bool _isGoodGuy;
         private List<IAttack> _attacks;
         private IAttack _activeAttack;
-        private List<IAttack> _defenses;
-        private IAttack _activeDefense;
+        private List<IDefend> _defenses;
+        private IDefend _activeDefense;
 
         // constructors
         public CharacterAttributes()
         {
             _attacks = new List<IAttack>();
-            _defenses = new List<IDefense>();
-            _activeAttack = new NullAbility();
-            _activeDefense = new NullAbility();
+            _defenses = new List<IDefend>();
+            _activeAttack = new NullAttack();
+            _activeDefense = new NullDefend();
         }
 
         // properties
@@ -61,8 +61,11 @@ namespace CSCD349Project
         }
         public Double _armor
         {
-            get { return _armor; }
+            get { return _Armor; }
+            set { _Armor = value; }
             //MICHAEL!!! I don't understand this setter crap. Help me out? LOL.
+            // this still needs work, we need to validate the new value of _Armor
+        
         }
         
         // methods
@@ -88,7 +91,10 @@ namespace CSCD349Project
                 return false;
             return _defenses.Remove(value);
         }
-        public void SetDefenses(List<IDefend> value) { if (value != null) _attacks = value; }
+        
+        
+        
+        //public void SetDefenses(List<IDefend> value) { if (value != null) _attacks = value; }
         public List<IDefend> GetDefenses() { return _defenses; }
     }
 }
