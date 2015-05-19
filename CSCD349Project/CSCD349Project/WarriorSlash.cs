@@ -8,11 +8,6 @@ namespace CSCD349Project
 {
     public class WarriorSlash : OffensiveAbility
     {
-        private string _AbilityName;
-        private Double _BaseDamage;
-        private Double _SuccessRate;
-        private Double _EnergyRequired;
-        
         public WarriorSlash()
         {
             this._AbilityName = "Slash";

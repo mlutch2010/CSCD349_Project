@@ -17,8 +17,13 @@ namespace CSCD349Project
           //  myAttributes._basePower  = 5;
             myAttributes._power      = 5;
             myAttributes.SetIsGoodGuy(true);
-            myAttributes.SetActiveAttack(new WarriorSlash());
+            myAttributes.AddAttack(new WarriorSlash());// Shouldn't have an active attack upon creation
+
             setAttributes(myAttributes);
+
+            //Add the abilities this concrete GameCharacter has by default
+            base.getAttributes().AddAttack(new WarriorSlash());
+            base.getAttributes().AddDefense(new WarriorLiftShield());
         }
     }
 }

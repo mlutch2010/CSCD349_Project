@@ -8,30 +8,26 @@ namespace CSCD349Project
 {
     public abstract class OffensiveAbility
     {
-        private string _AbilityName;
-        private Double _BaseDamage;
-        private Double _SuccessRate;
-        private Double _EnergyRequired;
+        protected string _AbilityName;
+        protected Double _BaseDamage;
+        protected Double _SuccessRate;
+        protected Double _EnergyRequired;
         
         // properties
         public Double _successRate
         {
             get{return _SuccessRate;}
-            set{_SuccessRate = value;}
         }
 
         public Double _baseDamage
         {
             get { return _BaseDamage; }
-            set { _BaseDamage = value; }
         }
 
         public Double _energyRequired
         {
             get { return _EnergyRequired; }
-            set { _EnergyRequired = value; }
         }
-
 
 
 
@@ -78,15 +74,24 @@ namespace CSCD349Project
             }
         }
 
-        private bool AbilitySuccessful(double successRate)
+        private bool AbilitySuccessful(double abilitySuccessRate)
         {
-            Random rnd = new Random();
+            var rnd = new Random();
             int percentChance = rnd.Next(0, 101);//generate random number between 0 and 100
 
-            if (percentChance >= this._successRate * 100)
+            Console.WriteLine("In AbilitySuccesful(), Random number is: {0}\nabilitySuccessRate is: {1}", percentChance, abilitySuccessRate);
+
+            if (percentChance >= abilitySuccessRate * 100)
                 return true;
             return false;
         }
+
+        public override string ToString()
+        {
+            return _AbilityName;
+        }
+
+
 
         /** Zack, I commented these becuase above it lookes like we are going with properties instead
          *  of Java style getters/setters

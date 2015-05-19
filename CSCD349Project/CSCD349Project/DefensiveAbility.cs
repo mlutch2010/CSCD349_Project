@@ -8,14 +8,29 @@ namespace CSCD349Project
 {
     public abstract class DefensiveAbility
     {
+        protected string _AbilityName;
+        protected Double _ArmorIncrease;
+        protected Double _SuccessRate;
 
-        private Double _ArmorIncrease;
-        private Double _SuccessRate;
+        public string _abilityName
+        {
+            get { return _AbilityName; }
+        }
+        public Double _armorIncrease
+        {
+            get { return _ArmorIncrease; }
+        }
+        public Double _successRate
+        {
+            get { return _SuccessRate; }
+        }
+
         public abstract void defend(GameCharacter defender);
         public abstract bool defenseSuccessful();
 
-        public Double _armorIncrease;
-
-        public Double _successRate;
+        public override string ToString()
+        {
+            return _AbilityName;
+        }
     }
 }

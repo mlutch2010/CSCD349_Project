@@ -34,6 +34,12 @@ namespace CSCD349Project
                 _attacks.Add(newAbility);
         }
 
+        public void AddDefense(DefensiveAbility newAbility)
+        {
+            if (newAbility != null)
+                _defenses.Add(newAbility);
+        }
+
         public Double _health
         {
             get {return _Health;}
@@ -66,9 +72,14 @@ namespace CSCD349Project
         {
             get { return _Armor; }
             set { _Armor = value; }
-            //MICHAEL!!! I don't understand this setter crap. Help me out? LOL.
-            // this still needs work, we need to validate the new value of _Armor
-        
+        }
+        public List<DefensiveAbility> _Defenses
+        {
+            get { return _defenses; }
+        }
+        public List<OffensiveAbility> _Attacks
+        {
+            get { return _attacks; }
         }
         
         // methods

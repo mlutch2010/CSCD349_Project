@@ -8,9 +8,6 @@ namespace CSCD349Project
 {
     public class WarriorLiftShield : DefensiveAbility
     {
-        private double _ArmorIncrease;
-        private double _SuccessRate;
-
         public WarriorLiftShield()
         {
             _ArmorIncrease = 5.0;//5 armor points
