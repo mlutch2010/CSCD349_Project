@@ -9,6 +9,7 @@ namespace CSCD349Project
     {
         private int[] _Dimensions;
         private Cell[,] _Cells;
+
         public Map(int[] dimensions)
         {
             _Cells = new Cell[dimensions[0],dimensions[1]];

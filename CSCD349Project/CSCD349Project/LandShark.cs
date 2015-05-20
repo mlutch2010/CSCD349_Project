@@ -5,16 +5,17 @@ using System.Text;
 
 namespace CSCD349Project
 {
-    public class Warrior: GameCharacter
+    public class LandShark : GameCharacter
     {
-        public Warrior() : base("Warrior")
+        public LandShark()
+            : base("Land Shark")
         {
             CharacterAttributes myAttributes = new CharacterAttributes();
             myAttributes._basehealth = 100;
-            myAttributes._health     = 100;
+            myAttributes._health = 100;
             myAttributes._baseEnergy = 20;
-            myAttributes._energy     = 20;
-            myAttributes._power      = 1;
+            myAttributes._energy = 20;
+            myAttributes._power = 1;
             myAttributes.SetIsGoodGuy(true);
             myAttributes.AddAttack(new WarriorSlash());// Shouldn't have an active attack upon creation
 

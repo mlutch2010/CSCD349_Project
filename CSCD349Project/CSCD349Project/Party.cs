@@ -23,7 +23,8 @@ namespace CSCD349Project
         {
             _Characters.Add(character);
             return _Characters.Count;
-        }        
+        }
+
         public bool RemoveCharacter(GameCharacter character)
         {
             return _Characters.Remove(character);
