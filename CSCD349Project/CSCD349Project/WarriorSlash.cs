@@ -15,7 +15,5 @@ namespace CSCD349Project
             this._SuccessRate = 0.90;//90%
             this._EnergyRequired = 5.0;//5 energy points (ep)
         }
-
-
     }
 }

@@ -19,11 +19,11 @@ namespace CSCD349Project
             myAttributes.SetIsGoodGuy(true);
             myAttributes.AddAttack(new WarriorSlash());// Shouldn't have an active attack upon creation
 
-            setAttributes(myAttributes);
+            SetAttributes(myAttributes);
 
             //Add the abilities this concrete GameCharacter has by default
-            base.getAttributes().AddAttack(new WarriorSlash());
-            base.getAttributes().AddDefense(new WarriorLiftShield());
+            base.GetAttributes().AddAttack(new WarriorSlash());
+            base.GetAttributes().AddDefense(new WarriorLiftShield());
         }
     }
 }

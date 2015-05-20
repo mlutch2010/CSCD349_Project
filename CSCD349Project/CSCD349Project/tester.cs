@@ -21,8 +21,8 @@ namespace CSCD349Project
             OffensiveAbility attackAbility = new WarriorSlash();
             DefensiveAbility defenseAbility = new WarriorLiftShield();
 
-            warrior1.getAttributes().SetActiveAttack(warrior1.getAttributes()._Attacks[0]);
-            warrior2.getAttributes().SetActiveDefense(warrior2.getAttributes()._Defenses[0]);
+            warrior1.GetAttributes().SetActiveAttack(warrior1.GetAttributes()._attacks[0]);
+            warrior2.GetAttributes().SetActiveDefense(warrior2.GetAttributes()._defenses[0]);
 
             
             Console.WriteLine("BEFORE WARRIOR 1 ATTACKS WARRIOR 2");
@@ -31,9 +31,12 @@ namespace CSCD349Project
 
             try
             {
-                warrior1.getAttributes().GetActiveAttack().attack(warrior1, warrior2);
+                warrior1.GetAttributes().GetActiveAttack().Attack(warrior1, warrior2);
             }
-            catch()
+            catch(AttackUnsuccesfulException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
 
             Console.WriteLine("AFTER WARRIOR 1 ATTACKS WARRIOR 2");
             Console.WriteLine(warrior1);

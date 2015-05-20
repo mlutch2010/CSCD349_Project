@@ -4,26 +4,26 @@ namespace CSCD349Project
 {
     public class CharacterAttributes
     {
-        // private feilds
+        // private fields
         private Double _Health;
         private Double _BaseHealth;
         private Double _Energy;
         private Double _BaseEnergy;
         private Double _Power;
         private Double _Armor;
-        private bool _isGoodGuy;
-        private List<OffensiveAbility> _attacks;
-        private OffensiveAbility _activeAttack;
-        private List<DefensiveAbility> _defenses;
-        private DefensiveAbility _activeDefense;
+        private bool _IsGoodGuy;
+        private List<OffensiveAbility> _Attacks;
+        private OffensiveAbility _ActiveAttack;
+        private List<DefensiveAbility> _Defenses;
+        private DefensiveAbility _ActiveDefense;
 
         // constructors
         public CharacterAttributes()
         {
-            _attacks = new List<OffensiveAbility>();
-            _defenses = new List<DefensiveAbility>();
-            _activeAttack = new NullAttack();
-            _activeDefense = new NullDefend();
+            _Attacks = new List<OffensiveAbility>();
+            _Defenses = new List<DefensiveAbility>();
+            _ActiveAttack = new NullAttack();
+            _ActiveDefense = new NullDefend();
         }
 
       
@@ -31,13 +31,13 @@ namespace CSCD349Project
         public void AddAttack(OffensiveAbility newAbility)
         {
             if(newAbility != null)
-                _attacks.Add(newAbility);
+                _Attacks.Add(newAbility);
         }
 
         public void AddDefense(DefensiveAbility newAbility)
         {
             if (newAbility != null)
-                _defenses.Add(newAbility);
+                _Defenses.Add(newAbility);
         }
 
         public Double _health
@@ -73,42 +73,42 @@ namespace CSCD349Project
             get { return _Armor; }
             set { _Armor = value; }
         }
-        public List<DefensiveAbility> _Defenses
+        public List<DefensiveAbility> _defenses
         {
-            get { return _defenses; }
+            get { return _Defenses; }
         }
-        public List<OffensiveAbility> _Attacks
+        public List<OffensiveAbility> _attacks
         {
-            get { return _attacks; }
+            get { return _Attacks; }
         }
         
         // methods
-        public bool GetIsGoodGuy() { return _isGoodGuy; }
-        public void SetIsGoodGuy(bool value) { _isGoodGuy = value;}
+        public bool GetIsGoodGuy() { return _IsGoodGuy; }
+        public void SetIsGoodGuy(bool value) { _IsGoodGuy = value;}
 
-        public void SetActiveAttack(OffensiveAbility value) { if (value != null) _activeAttack = value; }
-        public OffensiveAbility GetActiveAttack() { return _activeAttack; }
-        public List<OffensiveAbility> GetAttacks() { return _attacks; }
+        public void SetActiveAttack(OffensiveAbility value) { if (value != null) _ActiveAttack = value; }
+        public OffensiveAbility GetActiveAttack() { return _ActiveAttack; }
+        public List<OffensiveAbility> GetAttacks() { return _Attacks; }
         public bool RemoveAttack(OffensiveAbility value)
         {
-            if (_activeAttack == value)
+            if (_ActiveAttack == value)
                 return false;
-            return _attacks.Remove(value);
+            return _Attacks.Remove(value);
         }
-        public void SetAttacks(List<OffensiveAbility> value) { if (value != null) _attacks = value; }
+        public void SetAttacks(List<OffensiveAbility> value) { if (value != null) _Attacks = value; }
 
-        public void SetActiveDefense(DefensiveAbility value) { if (value != null) _activeDefense = value; }
-        public DefensiveAbility GetActiveDefense() { return _activeDefense; }
+        public void SetActiveDefense(DefensiveAbility value) { if (value != null) _ActiveDefense = value; }
+        public DefensiveAbility GetActiveDefense() { return _ActiveDefense; }
         public bool RemoveDefense(DefensiveAbility value)
         {
-            if (_activeDefense == value)
+            if (_ActiveDefense == value)
                 return false;
-            return _defenses.Remove(value);
+            return _Defenses.Remove(value);
         }
         
         
         
         //public void SetDefenses(List<IDefend> value) { if (value != null) _attacks = value; }
-        public List<DefensiveAbility> GetDefenses() { return _defenses; }
+        public List<DefensiveAbility> GetDefenses() { return _Defenses; }
     }
 }

@@ -25,8 +25,8 @@ namespace CSCD349Project
             get { return _SuccessRate; }
         }
 
-        public abstract void defend(GameCharacter defender);
-        public abstract bool defenseSuccessful();
+        //public abstract void defend(GameCharacter defender);
+        //public abstract bool defenseSuccessful();
 
         public override string ToString()
         {

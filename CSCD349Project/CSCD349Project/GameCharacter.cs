@@ -4,47 +4,47 @@ namespace CSCD349Project
 public abstract class GameCharacter : GameObject, IComparable<GameCharacter>
     {
         private static int noInstances = 0;
-        private int _id;
-        private CharacterAttributes _attributes;
-        private Party _party; 
+        private int _ID;
+        private CharacterAttributes _Attributes;
+        private Party _Party; 
  
         public GameCharacter(string name) : base(name)
         {
-            _id = noInstances ++;
+            _ID = noInstances ++;
         }
        
         // This constructor is used to create a GamaCharacter instance with a particular id for the purposes 
         // of searching for a character in a list.
-        public GameCharacter(int id) : base(""){_id = id;}
+        public GameCharacter(int id) : base(""){_ID = id;}
     
         public void PerformAbility() { }
 
         public int CompareTo(GameCharacter other)
         {
- 	        return _id - other._id;
+ 	        return _ID - other._ID;
         }
 
-        public CharacterAttributes getAttributes()
+        public CharacterAttributes GetAttributes()
         {
-            return _attributes;
+            return _Attributes;
         }
 
-        public void setAttributes(CharacterAttributes attributes)
+        public void SetAttributes(CharacterAttributes attributes)
         {
             if(attributes != null)
-                _attributes = attributes;
+                _Attributes = attributes;
         }
 
         public override string ToString()
         {
 
-            string output = "----- Game Character    id:" + _id  + "-----\n";
+            string output = "----- Game Character    id:" + _ID  + "-----\n";
             output += "name:" + GetName() + "\n";
-            output += (_attributes.GetIsGoodGuy()) ? "goodguy\n" : "badguy";
-            output += "health: " + _attributes._health + "\n";
-            output += "energy: " + _attributes._energy + "\n";
-            output += "power: "  + _attributes._power + "\n";
-            output += "armor: "  + _attributes._armor + "\n";
+            output += (_Attributes.GetIsGoodGuy()) ? "goodguy\n" : "badguy";
+            output += "health: " + _Attributes._health + "\n";
+            output += "energy: " + _Attributes._energy + "\n";
+            output += "power: "  + _Attributes._power + "\n";
+            output += "armor: "  + _Attributes._armor + "\n";
             output += "----------------------------------------------------\n";
             
             

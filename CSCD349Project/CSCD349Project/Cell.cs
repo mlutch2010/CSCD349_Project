@@ -3,7 +3,7 @@
     public sealed class Cell
     {
         private Map _MyMap;
-        private int[] _coordinates;
+        private int[] _Coordinates;
 
         public Map _myMap
         {
@@ -13,13 +13,13 @@
         public Cell(int[] coordinates, Map thisMap)
         {
             _MyMap = thisMap;
-            _coordinates = coordinates;
+            _Coordinates = coordinates;
         }
         public override string ToString()
         {
             string output = "\n";
             output += "#--------- Cell ---------#\n";
-            output += "coordinates: (" + _coordinates[0] + ", " + _coordinates[1] + ")\n";
+            output += "coordinates: (" + _Coordinates[0] + ", " + _Coordinates[1] + ")\n";
             output += "#------------------------#\n";
             return output;
         }

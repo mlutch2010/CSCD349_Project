@@ -31,10 +31,10 @@ namespace CSCD349Project
 
 
 
-        public virtual void attack(GameCharacter attacker, GameCharacter defender)
+        public virtual void Attack(GameCharacter attacker, GameCharacter defender)
         {
-            CharacterAttributes attackerAttributes = attacker.getAttributes();
-            CharacterAttributes defenderAttributes = defender.getAttributes();
+            CharacterAttributes attackerAttributes = attacker.GetAttributes();
+            CharacterAttributes defenderAttributes = defender.GetAttributes();
             OffensiveAbility activeOffense = attackerAttributes.GetActiveAttack();
             DefensiveAbility activeDefense = defenderAttributes.GetActiveDefense();
 
@@ -44,6 +44,7 @@ namespace CSCD349Project
                 //Succesful Attack?
                 if (AbilitySuccessful(activeOffense._successRate))//GetSuccessRate)));
                 {
+                    Console.WriteLine("Succesful Attack");
                     attackerAttributes._energy -= activeOffense._energyRequired;//_energyRequired;
 
                     Double healthLost = 0.0;
@@ -51,12 +52,14 @@ namespace CSCD349Project
                     //Succesful Defense?
                     if (AbilitySuccessful(activeDefense._successRate))
                     {
+                        Console.WriteLine("Succesful Defense");
                         healthLost = attackerAttributes._power * this._baseDamage - defenderAttributes._armor;
                         healthLost -= activeDefense._armorIncrease;
                     }
                     else
                     {
                         healthLost = attackerAttributes._power * this._baseDamage - defenderAttributes._armor;
+                        Console.WriteLine("Health Lost: " + healthLost);
                     }
 
                     defenderAttributes._health -= healthLost;
@@ -77,11 +80,11 @@ namespace CSCD349Project
         private bool AbilitySuccessful(double abilitySuccessRate)
         {
             var rnd = new Random();
-            int percentChance = rnd.Next(0, 101);//generate random number between 0 and 100
+            int percentChance = rnd.Next(-1, 101);//generate random number between 0 and 100
 
             Console.WriteLine("In AbilitySuccesful(), Random number is: {0}\nabilitySuccessRate is: {1}", percentChance, abilitySuccessRate);
 
-            if (percentChance >= abilitySuccessRate * 100)
+            if (percentChance <= abilitySuccessRate * 100)
                 return true;
             return false;
         }

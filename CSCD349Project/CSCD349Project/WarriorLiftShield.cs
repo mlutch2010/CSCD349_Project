@@ -23,17 +23,5 @@ namespace CSCD349Project
         /// <summary>
         /// 
         /// </summary>
-
-
-
-        public override void defend(GameCharacter defender)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override bool defenseSuccessful()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

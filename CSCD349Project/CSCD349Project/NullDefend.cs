@@ -9,12 +9,12 @@ namespace CSCD349Project
     public class NullDefend: DefensiveAbility
     {
 
-        public override void defend(GameCharacter defender)
+        public override void Defend(GameCharacter defender)
         {
             //throw new NotImplementedException();
         }
 
-        public override bool defenseSuccessful()
+        public override bool DefenseSuccessful()
         {
            // throw new NotImplementedException();
             return false;
@@ -25,10 +25,5 @@ namespace CSCD349Project
         {
  	        return "Null Defend";
         }
-    
     }
-
-
-     
-
 }

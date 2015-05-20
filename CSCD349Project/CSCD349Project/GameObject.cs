@@ -4,28 +4,28 @@ namespace CSCD349Project
 {
     public class GameObject
     {
-        private Cell _occupyingCell;
-        private Sprite _sprite;
+        private Cell _OccupyingCell;
+        private Sprite _Sprite;
         //private GameObjectType _type{get;set;}
-        private string _name;
+        private string _Name;
 
-        public string GetName() { return _name; }
+        public string GetName() { return _Name; }
 
-        public Cell GetCell() { return _occupyingCell; }
-        public void SetCell(Cell value) { if (value != null) _occupyingCell = value; }
+        public Cell GetCell() { return _OccupyingCell; }
+        public void SetCell(Cell value) { if (value != null) _OccupyingCell = value; }
 
-        public Sprite GetSprite() { return _sprite; }
-        public void SetSprite(Sprite value) { if(value != null ) _sprite = value;}
+        public Sprite GetSprite() { return _Sprite; }
+        public void SetSprite(Sprite value) { if(value != null ) _Sprite = value;}
 
 
         public GameObject(string name)
         {
-            _name = name;
+            _Name = name;
         }
 
         public override string ToString()
         {
-            return _name;
+            return _Name;
         }
     }
 
