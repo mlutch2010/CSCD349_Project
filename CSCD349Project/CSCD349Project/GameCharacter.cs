@@ -37,7 +37,6 @@ public abstract class GameCharacter : GameObject, IComparable<GameCharacter>
 
         public override string ToString()
         {
-
             string output = "----- Game Character    id:" + _ID  + "-----\n";
             output += "name:" + GetName() + "\n";
             output += (_Attributes.GetIsGoodGuy()) ? "goodguy\n" : "badguy";
@@ -46,9 +45,6 @@ public abstract class GameCharacter : GameObject, IComparable<GameCharacter>
             output += "power: "  + _Attributes._power + "\n";
             output += "armor: "  + _Attributes._armor + "\n";
             output += "----------------------------------------------------\n";
-            
-            
-            
             
             return output;
         }

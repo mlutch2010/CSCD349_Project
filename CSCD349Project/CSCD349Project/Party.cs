@@ -18,14 +18,12 @@ namespace CSCD349Project
 
         public List<GameItem> GetIventory() { return _Inventory; }
         public List<GameCharacter> GetCharacters() { return _Characters; }
-        public string GetName() { return _Name; }
-        
+        public string GetName() { return _Name; }        
         public int AddCharacter(GameCharacter character)
         {
             _Characters.Add(character);
             return _Characters.Count;
-        }
-        
+        }        
         public bool RemoveCharacter(GameCharacter character)
         {
             return _Characters.Remove(character);

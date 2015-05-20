@@ -55,7 +55,7 @@ namespace CSCD349Project
         public Double _power
         {
             get { return _Power; }
-            set { _Power = Math.Min(Math.Max(value, 0), _power); }
+            set { _Power = value; }
         }
 
         public Double _energy

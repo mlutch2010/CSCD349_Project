@@ -10,10 +10,10 @@ namespace CSCD349Project
     {
         public WarriorSlash()
         {
-            this._AbilityName = "Slash";
-            this._BaseDamage = 5.0;//5hp
-            this._SuccessRate = 0.90;//90%
-            this._EnergyRequired = 5.0;//5 energy points (ep)
+            _AbilityName = "Slash";
+            _BaseDamage = 5.0;//5hp
+            _SuccessRate = 0.90;//90%
+            _EnergyRequired = 5.0;//5 energy points (ep)
         }
     }
 }

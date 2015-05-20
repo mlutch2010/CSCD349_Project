@@ -15,19 +15,11 @@ namespace CSCD349Project
         
         // properties
         public Double _successRate
-        {
-            get{return _SuccessRate;}
-        }
-
+        { get{return _SuccessRate;} }
         public Double _baseDamage
-        {
-            get { return _BaseDamage; }
-        }
-
+        { get { return _BaseDamage; } }
         public Double _energyRequired
-        {
-            get { return _EnergyRequired; }
-        }
+        { get { return _EnergyRequired; } }
 
 
 
@@ -52,13 +44,14 @@ namespace CSCD349Project
                     //Succesful Defense?
                     if (AbilitySuccessful(activeDefense._successRate))
                     {
-                        Console.WriteLine("Succesful Defense");
-                        healthLost = attackerAttributes._power * this._baseDamage - defenderAttributes._armor;
+                        healthLost = attackerAttributes._power * activeOffense._baseDamage - defenderAttributes._armor;
                         healthLost -= activeDefense._armorIncrease;
+
+                        Console.WriteLine("Succesful Defense. healthLost=" + healthLost);
                     }
                     else
                     {
-                        healthLost = attackerAttributes._power * this._baseDamage - defenderAttributes._armor;
+                        healthLost = attackerAttributes._power * activeOffense._baseDamage - defenderAttributes._armor;
                         Console.WriteLine("Health Lost: " + healthLost);
                     }
 
