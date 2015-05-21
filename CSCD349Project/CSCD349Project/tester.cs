@@ -42,10 +42,10 @@ namespace CSCD349Project
             Console.WriteLine(warrior1);
             Console.WriteLine(warrior2);
 
-            /*
-            Console.WriteLine(warrior1.getAttributes().GetActiveAttack()._successRate);
-            Console.WriteLine(warrior2.getAttributes().GetActiveDefense()._successRate);
-            */
+            
+            Console.WriteLine(warrior1.GetAttributes().GetActiveAttack()._successRate);
+            Console.WriteLine(warrior2.GetAttributes().GetActiveDefense()._successRate);
+            
 
             // Wait for the user to type something...
             Console.ReadLine();

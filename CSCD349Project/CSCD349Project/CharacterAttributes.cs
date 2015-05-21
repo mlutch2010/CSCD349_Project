@@ -5,7 +5,7 @@ namespace CSCD349Project
     public class CharacterAttributes
     {
         // private fields
-        private sealed static int _MaxLevel = 4;
+        private static int _MaxLevel = 4;
         private int _Level = 1;
         private int[] _BaseXP;
         private int _XP = 0;

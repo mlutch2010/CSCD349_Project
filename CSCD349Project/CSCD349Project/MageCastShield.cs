@@ -10,7 +10,7 @@ namespace CSCD349Project
     {
         public MageCastShield()
         {
-            _ArmorIncrease = 20.0;//5 armor points
+            _ArmorIncrease = 20.0;//20 armor points
             _SuccessRate = 0.80;//80%
         }
 
