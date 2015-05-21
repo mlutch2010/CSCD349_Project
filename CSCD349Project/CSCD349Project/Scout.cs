@@ -5,26 +5,26 @@ using System.Text;
 
 namespace CSCD349Project
 {
-    public class LandShark : GameCharacter
+    public class Scout : GameCharacter
     {
-        public LandShark() 
-            : base("Land Shark")
+        public Scout()
+            : base("Scout")
         {
             CharacterAttributes myAttributes = new CharacterAttributes();
 
-            myAttributes._basehealth = 100;
-            myAttributes._health = 100;
+            myAttributes._baseXP = new int[] { 10, 20, 30, 40 };
+            myAttributes._basehealth = 50;
+            myAttributes._health = 50;
             myAttributes._baseEnergy = 20;
             myAttributes._energy = 20;
             myAttributes._power = 1;
-            myAttributes.SetIsGoodGuy(false);
-            myAttributes.AddAttack(new WarriorSlash());
+            myAttributes.SetIsGoodGuy(true);
 
             SetAttributes(myAttributes);
 
             //Add the abilities this concrete GameCharacter has by default
-            base.GetAttributes().AddAttack(new WarriorSlash());
-            base.GetAttributes().AddDefense(new WarriorLiftShield());
+            base.GetAttributes().AddAttack(new ScoutShootPlainArrow());
+            //base.GetAttributes().AddDefense(new WarriorLiftShield());
         }
     }
 }

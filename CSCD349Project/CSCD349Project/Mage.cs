@@ -5,18 +5,19 @@ using System.Text;
 
 namespace CSCD349Project
 {
-    public class Warrior: GameCharacter
+    public class Mage : GameCharacter
     {
-        public Warrior() : base("Warrior")
+        public Mage()
+            : base("Mage")
         {
             CharacterAttributes myAttributes = new CharacterAttributes();
 
-            myAttributes._baseXP = new int[]{10, 20, 30, 40};
+            myAttributes._baseXP = new int[] { 10, 20, 30, 40 };
             myAttributes._basehealth = 100;
-            myAttributes._health     = 100;
+            myAttributes._health = 100;
             myAttributes._baseEnergy = 50;
-            myAttributes._energy     = 50;
-            myAttributes._power      = 1;
+            myAttributes._energy = 50;
+            myAttributes._power = 1;
             myAttributes.SetIsGoodGuy(true);
 
             SetAttributes(myAttributes);

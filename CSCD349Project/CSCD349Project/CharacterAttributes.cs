@@ -5,6 +5,10 @@ namespace CSCD349Project
     public class CharacterAttributes
     {
         // private fields
+        private sealed static int _MaxLevel = 4;
+        private int _Level = 1;
+        private int[] _BaseXP;
+        private int _XP = 0;
         private Double _Health;
         private Double _BaseHealth;
         private Double _Energy;
@@ -38,6 +42,30 @@ namespace CSCD349Project
         {
             if (newAbility != null)
                 _Defenses.Add(newAbility);
+        }
+
+        public int _maxLevel
+        {
+            get { return _MaxLevel; }
+            //set { _MaxLevel = Math.Max(value, 0); }
+        }
+
+        public int _level
+        {
+            get { return _Level; }
+            set { _Level = Math.Min(Math.Max(value, 0), _MaxLevel); }
+        }
+
+        public int[] _baseXP
+        {
+            get { return _BaseXP; }
+            set { _BaseXP = _baseXP; }
+        }
+
+        public int _xp
+        {
+            get { return _XP; }
+            set { _XP = Math.Min(Math.Max(value, 0), _BaseXP[_Level]); }
         }
 
         public Double _health
