@@ -14,65 +14,14 @@ namespace CSCD349Project
         protected Double _EnergyRequired;
         
         // properties
+        public string _abilityName
+        { get { return _AbilityName; } }
         public Double _successRate
         { get{return _SuccessRate;} }
         public Double _baseDamage
         { get { return _BaseDamage; } }
         public Double _energyRequired
         { get { return _EnergyRequired; } }
-
-
-        /*
-        public virtual void Attack(GameCharacter attacker, GameCharacter defender)
-        {
-            CharacterAttributes attackerAttributes = attacker.GetAttributes();
-            CharacterAttributes defenderAttributes = defender.GetAttributes();
-            OffensiveAbility activeOffense = attackerAttributes.GetActiveAttack();
-            DefensiveAbility activeDefense = defenderAttributes.GetActiveDefense();
-
-            //Enough Energy?
-            if (attackerAttributes._energy >= activeOffense._energyRequired)//.GetEnergyRequired())
-            {
-                //Succesful Attack?
-                if (AbilitySuccessful(activeOffense._successRate))//GetSuccessRate)));
-                {
-                    Console.WriteLine("Succesful Attack");
-                    attackerAttributes._energy -= activeOffense._energyRequired;//_energyRequired;
-
-                    Double healthLost = 0.0;
-
-                    //Succesful Defense?
-                    if (AbilitySuccessful(activeDefense._successRate))
-                    {
-                        healthLost = attackerAttributes._power * activeOffense._baseDamage - defenderAttributes._armor;
-                        healthLost -= activeDefense._armorIncrease;
-
-                        Console.WriteLine("Succesful Defense. healthLost=" + healthLost);
-                    }
-                    else
-                    {
-                        healthLost = attackerAttributes._power * activeOffense._baseDamage - defenderAttributes._armor;
-                        Console.WriteLine("Health Lost: " + healthLost);
-                    }
-
-                    defenderAttributes._health -= healthLost;
-                }
-                else
-                {
-                    string msg = "Attack Failed\n";// = attacker.getName() "\'s " + this.abilityName + " missed " + defender.getName() + "!";
-                    throw new AttackUnsuccesfulException(msg);
-                }
-            }
-            else
-            {
-                string msg = "Current Warrior Energy: " + attackerAttributes._energy + "\nBut SLASH requires: " + this._energyRequired + "\n";
-                throw new NotEnoughEnergyException(msg);
-            }
-        }
-        
-
-        
-        * */
 
         public override string ToString()
         {
