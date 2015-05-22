@@ -18,13 +18,14 @@ namespace CSCD349Project
             myAttributes._baseEnergy = 50;
             myAttributes._energy = 50;
             myAttributes._power = 1;
+            myAttributes._armor = 1;
             myAttributes.SetIsGoodGuy(true);
 
             SetAttributes(myAttributes);
 
             //Add the abilities this concrete GameCharacter has by default
-            base.GetAttributes().AddAttack(new WarriorSlash());
-            base.GetAttributes().AddDefense(new WarriorLiftShield());
+            base.GetAttributes().AddAttack(new MageShootLightning());
+            base.GetAttributes().AddDefense(new MageCastShield());
         }
     }
 }

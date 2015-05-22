@@ -31,7 +31,7 @@ namespace CSCD349Project
 
             try
             {
-                warrior1.GetAttributes().GetActiveAttack().Attack(warrior1, warrior2);
+                //warrior1.GetAttributes().GetActiveAttack().Attack(warrior1, warrior2);
             }
             catch(AttackUnsuccesfulException ex)
             {
@@ -48,6 +48,7 @@ namespace CSCD349Project
             
 
             // Wait for the user to type something...
+            Console.WriteLine("Press any key to quit.");
             Console.ReadLine();
 
         }

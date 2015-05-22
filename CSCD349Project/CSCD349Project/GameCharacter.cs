@@ -17,7 +17,37 @@ public abstract class GameCharacter : GameObject, IComparable<GameCharacter>
         // of searching for a character in a list.
         public GameCharacter(int id) : base(""){_ID = id;}
     
-        public void PerformAbility() { }
+        public void PerformActiveAttack(GameCharacter enemy) 
+        {
+            CharacterAttributes attackerAttributes = this.GetAttributes();
+            OffensiveAbility activeAttack = attackerAttributes.GetActiveAttack();
+            Double attackDamage = 0.0;
+
+            //Does the attacker have enough Energy to perform the attack?
+            if (this._Attributes._energy >= activeAttack._energyRequired && AbilitySuccessful(activeAttack._energyRequired))
+            {
+                attackDamage = this._Attributes.GetActiveAttack()._baseDamage;
+            }
+
+            enemy.PerformActiveDefense(attackDamage);
+        }
+
+        public void PerformActiveDefense(Double incomingDamage)
+        {
+            
+        }
+
+        private bool AbilitySuccessful(double abilitySuccessRate)
+        {
+            var rnd = new Random();
+            int percentChance = rnd.Next(-1, 101);//generate random number between 0 and 100
+
+            Console.WriteLine("In AbilitySuccesful(), Random number is: {0}\nabilitySuccessRate is: {1}", percentChance, abilitySuccessRate);
+
+            if (percentChance <= abilitySuccessRate * 100)
+                return true;
+            return false;
+        }
 
         public int CompareTo(GameCharacter other)
         {

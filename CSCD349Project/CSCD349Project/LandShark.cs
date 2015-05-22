@@ -17,14 +17,14 @@ namespace CSCD349Project
             myAttributes._baseEnergy = 20;
             myAttributes._energy = 20;
             myAttributes._power = 1;
+            myAttributes._armor = 1;
             myAttributes.SetIsGoodGuy(false);
-            myAttributes.AddAttack(new WarriorSlash());
 
             SetAttributes(myAttributes);
 
             //Add the abilities this concrete GameCharacter has by default
-            base.GetAttributes().AddAttack(new WarriorSlash());
-            base.GetAttributes().AddDefense(new WarriorLiftShield());
+            base.GetAttributes().AddAttack(new LandSharkChomp());
+            base.GetAttributes().AddDefense(new LandSharkEvade());
         }
     }
 }

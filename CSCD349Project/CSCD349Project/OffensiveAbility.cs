@@ -22,7 +22,7 @@ namespace CSCD349Project
         { get { return _EnergyRequired; } }
 
 
-
+        /*
         public virtual void Attack(GameCharacter attacker, GameCharacter defender)
         {
             CharacterAttributes attackerAttributes = attacker.GetAttributes();
@@ -69,18 +69,10 @@ namespace CSCD349Project
                 throw new NotEnoughEnergyException(msg);
             }
         }
+        
 
-        private bool AbilitySuccessful(double abilitySuccessRate)
-        {
-            var rnd = new Random();
-            int percentChance = rnd.Next(-1, 101);//generate random number between 0 and 100
-
-            Console.WriteLine("In AbilitySuccesful(), Random number is: {0}\nabilitySuccessRate is: {1}", percentChance, abilitySuccessRate);
-
-            if (percentChance <= abilitySuccessRate * 100)
-                return true;
-            return false;
-        }
+        
+        * */
 
         public override string ToString()
         {
