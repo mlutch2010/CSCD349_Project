@@ -29,6 +29,7 @@ namespace CSCD349Project
             _FinishCell = _Cells[finishCoordinates[0], finishCoordinates[1]];
             _ActiveCell = _StartCell;
         }
+
         public void GenerateLevel(){}
         public Cell GetCellAt(int row, int column)
         {
@@ -51,27 +52,29 @@ namespace CSCD349Project
 
         public override string ToString()
         {
-            string output = ""; /*= "----- Game Character    id:" + _ID + "-----\n";
-            output += "name:" + GetName() + "\n";
-            output += (_Attributes.GetIsGoodGuy()) ? "goodguy\n" : "badguy";
-            output += "health: " + _Attributes._health + "\n";
-            output += "energy: " + _Attributes._energy + "\n";
-            output += "power: " + _Attributes._power + "\n";
-            output += "armor: " + _Attributes._armor + "\n";
-            output += "----------------------------------------------------\n";
-            */
+            string output = "";
             int r, c;
             for (r = 0; r < _Dimensions[0] - 1; ++r)
             {
                 for (c = 0; c < _Dimensions[1] - 1; ++c)
                 {
                     //_Cells[r, c] = new Cell(new int[] { r, c }, this);
-                    if(_Cells[r,c])
-                        output += 2;
+                    if(_Cells[r,c] == _StartCell)
+                        output += "S";
+                    else if(_Cells[r,c] == _FinishCell)
+                        output += "F";
+                    else if (_Cells[r, c] == _ActiveCell)
+                        output += "X";
+                    else
+                    {
+                        if (_Cells[r, c]._traversable)
+                            output += "+";
+                        else
+                            output += "-";
+                    }
                 }
                 output += "\n";
             }
-
 
             return output;
         }

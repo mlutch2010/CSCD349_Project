@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,10 +18,12 @@ namespace CSCD349Project
 
         public static void Main(string[]args)
         {
-            //GameEngine thisGame = new GameEngine();
+            GameEngine thisGame = new GameEngine();
 
             //thisGame.Initialize();
             //thisGame.Run();
+
+            Console.ReadKey();
         }
 
         public GameEngine()
@@ -29,7 +32,7 @@ namespace CSCD349Project
 
             // create the maps
             for (int i = 0; i < noLevels; ++i)
-                maps.Add(ReadMapFile("levelData\\level" + i + ".map"));
+                maps.Add(BuildMapFromFile("..\\..\\levelData\\level" + i + ".map"));
         }
 
         private void  Initialize()
@@ -65,23 +68,43 @@ namespace CSCD349Project
             }
         }
 
-        public Map ReadMapFile(string path)
+        //CONSIDER MAKING THIS A CLASS
+        public Map BuildMapFromFile(string path)
         {
             Map thisMap = null;
             Cell[,] cells;
             int noRows = 0;
             int noCols = 0;
+            char tCellCode, ntCellCode;//t => traversable, nt => non-traversable
             
             // read in a map from a map file
             try
             {
                 // get dimensions
-                
+                using(StreamReader sr = new StreamReader(path))
+                {
+                    string line = "";
+                    char[] lineChars;
+                    
+                    //Read in dimensions
+                    if ((line = sr.ReadLine()) != null){
+                        noRows = Convert.ToInt32(line);
+                    }
+                    if ((line = sr.ReadLine()) != null){
+                        noCols = Convert.ToInt32(line);
+                    }
 
+                    //Read in legend
+                    if ((line = sr.ReadLine()) != null){
+                        noRows = Convert.ToInt32(line);
+                    }
+
+                    //Read in map
+                }
             }
             catch (Exception e)
             {
-
+                Console.WriteLine(e.Message);
             }
             //thisMap = new Map(new int[] { noRows, noCols });
             return thisMap;

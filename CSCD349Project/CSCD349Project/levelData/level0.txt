@@ -1,10 +1,10 @@
 ﻿15
 15
-a
 t
+a
 grass.bmp
-b
 n
+b
 wall.bmp
 bbbbbbbbbbbbbbb
 aabaaaabbbaaabb

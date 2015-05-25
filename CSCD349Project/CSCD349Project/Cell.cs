@@ -4,6 +4,7 @@
     {
         private Map _MyMap;
         private int[] _Coordinates;
+        private bool _Traversable;
         /*
         private bool _IsStart;
         private bool _IsFinish;
@@ -21,16 +22,23 @@
         }
          * */
 
+        public Cell(int[] coordinates, Map thisMap)
+        {
+            _MyMap = thisMap;
+            _Coordinates = coordinates;
+            _Traversable = true;
+        }
+
+        public bool _traversable
+        {
+            get { return _Traversable; }
+        }
         public Map _myMap
         {
             get { return _MyMap; }
         }
 
-        public Cell(int[] coordinates, Map thisMap)
-        {
-            _MyMap = thisMap;
-            _Coordinates = coordinates;
-        }
+        
         public override string ToString()
         {
             string output = "\n";
