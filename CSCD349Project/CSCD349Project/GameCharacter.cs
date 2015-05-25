@@ -1,7 +1,7 @@
 using System;
 namespace CSCD349Project
 {
-public abstract class GameCharacter : GameObject, IComparable<GameCharacter>
+    public abstract class GameCharacter : GameObject, IComparable<GameCharacter>
     {
         private static int noInstances = 0;
         private int _ID;
@@ -19,7 +19,7 @@ public abstract class GameCharacter : GameObject, IComparable<GameCharacter>
         // of searching for a character in a list.
         public GameCharacter(int id) : base(""){_ID = id;}
     
-        public void PerformActiveAttack(GameCharacter enemy) 
+        public void PerformActiveAttack(GameCharacter enemy)
         {
             CharacterAttributes attackerAttributes = this._Attributes;
             OffensiveAbility activeAttack = attackerAttributes.GetActiveAttack();

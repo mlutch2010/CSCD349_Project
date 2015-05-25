@@ -46,6 +46,7 @@
     <Compile Include="CharacterAttributes.cs" />
     <Compile Include="DefensiveAbility.cs" />
     <Compile Include="GameCharacter.cs" />
+    <Compile Include="GameEngine.cs" />
     <Compile Include="GameItem.cs" />
     <Compile Include="GameObject.cs" />
     <Compile Include="LandShark.cs" />
