@@ -6,7 +6,8 @@ namespace CSCD349Project
     {
         public static void Main(string[] args)
         {
-            Map thisMap = new Map(new int[] {10,10});
+            Map thisMap = new Map(new int[] {10,10}, new LevelOneEnemyFactory());
+            thisMap.GenerateLevel();
             Party thisParty = new Party("party one", thisMap.GetCellAt(3,3));
 
             Cell thisCell = thisMap.GetCellAt(1, 1);
