@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbstractEnemyFactory.cs" />
+    <Compile Include="AbstractItemFactory.cs" />
     <Compile Include="AttackUnsuccesfulException.cs" />
     <Compile Include="Cell.cs" />
     <Compile Include="CharacterAttributes.cs" />
@@ -52,6 +54,8 @@
     <Compile Include="LandShark.cs" />
     <Compile Include="LandSharkChomp.cs" />
     <Compile Include="LandSharkEvade.cs" />
+    <Compile Include="LevelOneEnemyFactory.cs" />
+    <Compile Include="LevelOneItemFactory.cs" />
     <Compile Include="Mage.cs" />
     <Compile Include="MageCastShield.cs" />
     <Compile Include="MageShootLightning.cs" />
@@ -65,6 +69,7 @@
     <Compile Include="Scout.cs" />
     <Compile Include="ScoutRoll.cs" />
     <Compile Include="ScoutShootPlainArrow.cs" />
+    <Compile Include="SmallHealthPotion.cs" />
     <Compile Include="tester.cs" />
     <Compile Include="Warrior.cs" />
     <Compile Include="WarriorLiftShield.cs" />

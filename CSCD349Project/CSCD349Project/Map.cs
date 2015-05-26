@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,6 +31,49 @@ namespace CSCD349Project
             _StartCell = _Cells[startCoordinates[0], startCoordinates[1]];
             _FinishCell = _Cells[finishCoordinates[0], finishCoordinates[1]];
             _ActiveCell = _StartCell;
+        }
+
+        //Build a map from file
+        //CONSIDER MAKING THIS A CLASS
+        public Map(string path)
+        {
+            Map thisMap = null;
+            Cell[,] cells;
+            int noRows = 0;
+            int noCols = 0;
+            char tCellCode, ntCellCode;//t => traversable, nt => non-traversable
+
+            // read in a map from a map file
+            try
+            {
+                // get dimensions
+                using (StreamReader sr = new StreamReader(path))
+                {
+                    string line = "";
+                    char[] lineChars;
+
+
+
+                    //Read in dimensions
+                    if ((line = sr.ReadLine()) != null)
+                        noRows = Convert.ToInt32(line);
+
+                    if ((line = sr.ReadLine()) != null)
+                        noCols = Convert.ToInt32(line);
+
+                    //Read in legend
+                    noRows = String.ToCharArray(line);
+
+
+                    //Read in map
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            //thisMap = new Map(new int[] { noRows, noCols });
+            return thisMap;
         }
 
         public void GenerateLevel()

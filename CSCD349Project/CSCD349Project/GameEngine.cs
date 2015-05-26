@@ -68,49 +68,6 @@ namespace CSCD349Project
             }
         }
 
-        //CONSIDER MAKING THIS A CLASS
-        public Map BuildMapFromFile(string path)
-        {
-            Map thisMap = null;
-            Cell[,] cells;
-            int noRows = 0;
-            int noCols = 0;
-            char tCellCode, ntCellCode;//t => traversable, nt => non-traversable
-            
-            // read in a map from a map file
-            try
-            {
-                // get dimensions
-                using(StreamReader sr = new StreamReader(path))
-                {
-                    string line = "";
-                    char[] lineChars;
-                    
-                    //Read in dimensions
-                    if ((line = sr.ReadLine()) != null){
-                        noRows = Convert.ToInt32(line);
-                    }
-                    if ((line = sr.ReadLine()) != null){
-                        noCols = Convert.ToInt32(line);
-                    }
-
-                    //Read in legend
-                    if ((line = sr.ReadLine()) != null){
-                        noRows = Convert.ToInt32(line);
-                    }
-
-                    //Read in map
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
-            //thisMap = new Map(new int[] { noRows, noCols });
-            return thisMap;
-        }
-    
-    
     
         public void ShowErrorMessage(string message)
         {
