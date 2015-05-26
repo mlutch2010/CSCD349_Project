@@ -10,8 +10,9 @@ namespace CSCD349Project
         private int[] _Dimensions;
         private Cell[,] _Cells;
         private Cell _StartCell, _FinishCell, _ActiveCell;
+        private AbstractEnemyFactory _Factory;
 
-        public Map(int[] dimensions, int[] startCoordinates, int[] finishCoordinates)
+        public Map(int[] dimensions, int[] startCoordinates, int[] finishCoordinates, AbstractEnemyFactory factory)
         {
             _Cells = new Cell[dimensions[0],dimensions[1]];
             _Dimensions = dimensions;
@@ -23,6 +24,7 @@ namespace CSCD349Project
                     _Cells[r, c] = new Cell(new int[] { r, c }, this);
                 }
             }
+            _Factory = factory;
 
             //Set start, finish, and active cells
             _StartCell = _Cells[startCoordinates[0], startCoordinates[1]];
@@ -30,10 +32,24 @@ namespace CSCD349Project
             _ActiveCell = _StartCell;
         }
 
-        public void GenerateLevel(){}
+        public void GenerateLevel()
+        {
+            for (int i = 0; i < _Dimensions[0]-1; ++i)
+            {
+                for(int j = 0; j < _Dimensions[1]-1; ++j)
+                {
+                    _Cells[i, j].GenerateEnemies();
+                }
+            }
+        }
         public Cell GetCellAt(int row, int column)
         {
             return _Cells[row, column];
+        }
+        
+        public AbstractEnemyFactory GetFactory()
+        {
+            return _Factory;
         }
 
         public Cell _startCell
