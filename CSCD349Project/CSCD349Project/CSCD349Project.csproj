@@ -60,6 +60,7 @@
     <Compile Include="MageCastShield.cs" />
     <Compile Include="MageShootLightning.cs" />
     <Compile Include="Map.cs" />
+    <Compile Include="Messaging.cs" />
     <Compile Include="NotEnoughEnergyException.cs" />
     <Compile Include="NullAttack.cs" />
     <Compile Include="NullDefend.cs" />

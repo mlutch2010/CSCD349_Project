@@ -15,3 +15,6 @@ C:\Users\zach\Google Drive\0_SCHOOL\0_Spring 2015\CSCD349_GitHub-Project\CSCD349
 C:\Users\zach\Google Drive\0_SCHOOL\0_Spring 2015\CSCD349_GitHub-Project\CSCD349_Project\CSCD349Project\CSCD349Project\obj\Debug\CSCD349Project.pdb
 C:\Users\zach\Google Drive\0_SCHOOL\0_Spring 2015\CSCD349_GitHub-Project\CSCD349_Project\CSCD349Project\CSCD349Project\bin\Debug\CSCD349Project.exe
 C:\Users\zach\Google Drive\0_SCHOOL\0_Spring 2015\CSCD349_GitHub-Project\CSCD349_Project\CSCD349Project\CSCD349Project\bin\Debug\CSCD349Project.pdb
+Y:\CSCD 349\Project\CSCD349_Final\CSCD349Project\CSCD349Project\bin\Debug\CSCD349Project.exe.config
+Y:\CSCD 349\Project\CSCD349_Final\CSCD349Project\CSCD349Project\obj\Debug\CSCD349Project.exe
+Y:\CSCD 349\Project\CSCD349_Final\CSCD349Project\CSCD349Project\obj\Debug\CSCD349Project.pdb
