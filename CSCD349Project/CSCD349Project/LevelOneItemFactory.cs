@@ -11,7 +11,16 @@ namespace CSCD349Project
         public LevelOneItemFactory() { }
         public override GameItem GetRandomItem()
         {
-            return new SmallHealthPotion();
+            Random rnd = new Random();
+            int choice = rnd.Next(2);
+            if(choice == 0)
+            {
+                return new SmallHealthPotion();
+            }
+            else
+            {
+                return new SmallEnergyPotion();
+            }
         }
     }
 }
