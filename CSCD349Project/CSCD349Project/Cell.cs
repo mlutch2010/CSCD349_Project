@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+
 ﻿namespace CSCD349Project
 {
     public sealed class Cell
@@ -6,6 +9,7 @@
         private int[] _Coordinates;
         private bool _Traversable;
         private Party _Enemies;
+        private List<GameItem> _Items;
         /*
         private bool _IsStart;
         private bool _IsFinish;
@@ -29,11 +33,17 @@
             _Coordinates = coordinates;
             _Traversable = true;
             _Enemies = new Party("Enemies", this);
+            _Items = new List<GameItem>();
         }
         
         public Party _enemies
         {
             get {return _Enemies;}
+        }
+        
+        public List<GameItem> _items
+        {
+            get { return _Items; }
         }
 
         public bool _traversable
@@ -51,37 +61,73 @@
         //(Sorry, I know it looks a little bloated :( )
         public void GenerateEnemies()
         {
-            Random rnd = new Random();
-            int choice = rnd.Next(12);
-            if(choice <= 3)
+            //Test to see if the cell is traversable. We don't need to generate enemies in the wall!
+            if(_Traversable)
             {
-                //Empty party, no added enemies.
-            }
-            else if (choice > 3 && choice <= 6)
-            {
-                _Enemies.AddCharacter(_MyMap.GetFactory().GetRandomGameCharacter());
-            }
-            else if (choice > 6  || choice <= 9)
-            {
-                for(int i = 0; i < 2; i++)
+                Random rnd = new Random();
+                int choice = rnd.Next(12);
+                if (choice <= 3)
                 {
-                    _Enemies.AddCharacter(_MyMap.GetFactory().GetRandomGameCharacter());
+                    //Empty party, no added enemies.
+                }
+                else if (choice > 3 && choice <= 6)
+                {
+                    _Enemies.AddCharacter(_MyMap.GetEnemyFactory().GetRandomGameCharacter());
+                }
+                else if (choice > 6 || choice <= 9)
+                {
+                    for (int i = 0; i < 2; i++)
+                    {
+                        _Enemies.AddCharacter(_MyMap.GetEnemyFactory().GetRandomGameCharacter());
+                    }
+                }
+                else if (choice == 10)
+                {
+                    for (int i = 0; i < 3; i++)
+                    {
+                        _Enemies.AddCharacter(_MyMap.GetEnemyFactory().GetRandomGameCharacter());
+                    }
+                }
+                else
+                {
+                    for (int i = 0; i < 4; i++)
+                    {
+                        _Enemies.AddCharacter(_MyMap.GetEnemyFactory().GetRandomGameCharacter());
+                    }
                 }
             }
-            else if (choice == 10)
+        }
+        
+        public void GenerateItems()
+        {
+            if(_Traversable)
             {
-                for (int i = 0; i < 3; i++)
+                Random rnd = new Random();
+                int choice = rnd.Next(5);
+                if (choice < 2)
                 {
-                    _Enemies.AddCharacter(_MyMap.GetFactory().GetRandomGameCharacter());
+                    //Empty list, no items added.
+                }
+                else if (choice == 2)
+                {
+                    _Items.Add(_MyMap.GetItemFactory().GetRandomItem());
+                }
+                else if (choice == 3)
+                {
+                    for (int i = 0; i < 2; i++)
+                    {
+                        _Items.Add(_MyMap.GetItemFactory().GetRandomItem());
+                    }
+                }
+                else if (choice == 4)
+                {
+                    for (int i = 0; i < 3; i++)
+                    {
+                        _Items.Add(_MyMap.GetItemFactory().GetRandomItem());
+                    }
                 }
             }
-            else
-            {
-                for(int i = 0; i < 4; i++)
-                {
-                    _Enemies.AddCharacter(_MyMap.GetFactory().GetRandomGameCharacter());
-                }
-            }
+            
         }
 
         
