@@ -10,7 +10,8 @@ namespace CSCD349Project
         //Default constructor for SmallHealthPotion
         public SmallHealthPotion()
         {
-            _description = "Small Health Potion";
+            _name = "Small Health Potion";
+            _description = "A potion that heals 50 health.";
         }
 
         public override void Use(GameCharacter character)
