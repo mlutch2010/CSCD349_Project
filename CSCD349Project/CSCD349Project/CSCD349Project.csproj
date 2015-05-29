@@ -51,9 +51,15 @@
     <Compile Include="GameEngine.cs" />
     <Compile Include="GameItem.cs" />
     <Compile Include="GameObject.cs" />
+    <Compile Include="Gargoyle.cs" />
+    <Compile Include="GargoyleFreeze.cs" />
+    <Compile Include="GargoyleStare.cs" />
     <Compile Include="LandShark.cs" />
     <Compile Include="LandSharkChomp.cs" />
     <Compile Include="LandSharkEvade.cs" />
+    <Compile Include="Leprachaun.cs" />
+    <Compile Include="LeprachaunDisappear.cs" />
+    <Compile Include="LeprachaunThrowGold.cs" />
     <Compile Include="LevelOneEnemyFactory.cs" />
     <Compile Include="LevelOneItemFactory.cs" />
     <Compile Include="Mage.cs" />

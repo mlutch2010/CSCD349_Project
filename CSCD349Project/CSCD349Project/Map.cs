@@ -62,7 +62,7 @@ namespace CSCD349Project
                         noCols = Convert.ToInt32(line);
 
                     //Read in legend
-                    noRows = String.ToCharArray(line);
+                    //noRows = String.ToCharArray(line);
 
 
                     //Read in map
