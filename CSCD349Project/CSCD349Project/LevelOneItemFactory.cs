@@ -12,14 +12,30 @@ namespace CSCD349Project
         public override GameItem GetRandomItem()
         {
             Random rnd = new Random();
-            int choice = rnd.Next(2);
-            if(choice == 0)
+            int choice = rnd.Next(18);
+            if(choice < 5)
             {
                 return new SmallHealthPotion();
             }
-            else
+            else if (choice < 10)
             {
                 return new SmallEnergyPotion();
+            }
+            else if (choice < 13)
+            {
+                return new MediumHealthPotion();
+            }
+            else if (choice < 16)
+            {
+                return new MediumEnergyPotion();
+            }
+            else if (choice == 16)
+            {
+                return new LargeHealthPotion();
+            }
+            else
+            {
+                return new LargeEnergyPotion();
             }
         }
     }
