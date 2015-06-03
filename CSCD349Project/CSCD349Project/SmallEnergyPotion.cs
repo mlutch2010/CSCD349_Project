@@ -11,13 +11,13 @@ namespace CSCD349Project
         public SmallEnergyPotion()
         {
             _name = "Small Energy Potion";
-            _description = "A potion that restores 50 energy points.";
+            _description = "A potion that restores 20 energy points.";
         }
 
         public override void Use(GameCharacter character)
         {
-            character.GetAttributes()._energy += 50;
-            Console.WriteLine("The potion restored 50 energy points!");
+            character.GetAttributes()._energy += 20;
+            Console.WriteLine("The potion restored 20 energy points!");
         }
     }
 }
