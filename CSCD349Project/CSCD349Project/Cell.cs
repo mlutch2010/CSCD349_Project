@@ -10,10 +10,10 @@ using System.Collections.Generic;
         private bool _Traversable;
         private Party _Enemies;
         private List<GameItem> _Items;
-        /*
         private bool _IsStart;
         private bool _IsFinish;
 
+        /*
         public bool _isStart
         {
             get { return _IsStart; }
@@ -27,14 +27,37 @@ using System.Collections.Generic;
         }
          * */
 
-        public Cell(int[] coordinates, Map thisMap)
+        /*
+         * traversable=true
+         * startOrFinish: true->start, false->finish, null->neither
+         * */
+        public Cell(int[] coordinates, Map thisMap, bool traversable, bool startOrFinish)
         {
             _MyMap = thisMap;
             _Coordinates = coordinates;
-            _Traversable = true;
+            _Traversable = traversable;
+
+            if (startOrFinish == true)
+            {
+                _IsStart = true;
+                _IsFinish = false;
+            }
+            else if (startOrFinish == false)
+            {
+                _IsStart = true;
+                _IsFinish = false;
+            }
+            else
+            {
+                _IsStart = false;
+                _IsFinish = false;
+            }
+
             _Enemies = new Party("Enemies", this);
             _Items = new List<GameItem>();
         }
+
+
         
         public Party _enemies
         {

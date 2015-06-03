@@ -32,7 +32,7 @@ namespace CSCD349Project
 
             // create the maps
             for (int i = 0; i < noLevels; ++i)
-                maps.Add(BuildMapFromFile("..\\..\\levelData\\level" + i + ".map"));
+                maps.Add(new Map(CSCD349Project.Properties.Resources.level0));
         }
 
         private void  Initialize()

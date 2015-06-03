@@ -23,7 +23,7 @@ namespace CSCD349Project
             {
                 for(c = 0; c < dimensions[1] - 1; ++c)
                 {
-                    _Cells[r, c] = new Cell(new int[] { r, c }, this);
+                    _Cells[r, c] = new Cell(new int[] { r, c }, this, true, null);
                 }
             }
             _EnemyFactory = enemyFactory;
@@ -37,7 +37,7 @@ namespace CSCD349Project
 
         //Build a map from file
         //CONSIDER MAKING THIS A CLASS
-        public Map(string path)
+        public Map(string mapFile)
         {
             Map thisMap = null;
             Cell[,] cells;
@@ -49,12 +49,12 @@ namespace CSCD349Project
             try
             {
                 // get dimensions
-                using (StreamReader sr = new StreamReader(path))
+                using (StreamReader sr = new StreamReader(mapFile))
                 {
                     string line = "";
                     char[] lineChars;
-
-
+                    char curChar;
+                    int[] curCoords = new int[2];
 
                     //Read in dimensions
                     if ((line = sr.ReadLine()) != null)
@@ -63,8 +63,33 @@ namespace CSCD349Project
                     if ((line = sr.ReadLine()) != null)
                         noCols = Convert.ToInt32(line);
 
-                    //Read in legend
-                    //noRows = String.ToCharArray(line);
+                    _Cells = new Cell[noRows, noCols];
+
+                    //Read in map
+                    for(int r=0; r<noRows; r++)
+                    {
+                        line = sr.ReadLine();
+                        lineChars = line.ToCharArray();
+                        for(int c=0; c<noCols; c++)
+                        {
+                            curCoords[0] = r; curCoords[1] = c;
+                            curChar = lineChars[c];
+                            switch(curChar)
+                            {
+                                case 's'://start cell
+                                    _Cells[r,c] = new Cell();
+                                    break;
+                                case 'f'://finish cell
+                                    break;
+                                case 't'://traversable cell
+                                    break;
+                                case 'n'://nontraversable cell
+                                    break;
+
+                            }
+                        }
+                    }
+
 
 
                     //Read in map
@@ -75,7 +100,6 @@ namespace CSCD349Project
                 Console.WriteLine(e.Message);
             }
             //thisMap = new Map(new int[] { noRows, noCols });
-            return thisMap;
         }
 
         public void GenerateLevel()
