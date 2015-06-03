@@ -13,7 +13,20 @@ namespace CSCD349Project
 
         override public GameCharacter GetRandomGameCharacter()
         {
-            return new LandShark();
+            Random rnd = new Random();
+            int choice = rnd.Next(3);
+            if(choice == 0)
+            {
+                return new LandShark();
+            }
+            else if (choice == 1)
+            {
+                return new Leprachaun();
+            }
+            else
+            {
+                return new Gargoyle();
+            }
         }
     }
 }
