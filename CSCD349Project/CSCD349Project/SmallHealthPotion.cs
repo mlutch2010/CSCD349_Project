@@ -11,15 +11,15 @@ namespace CSCD349Project
         public SmallHealthPotion()
         {
             _name = "Small Health Potion";
-            _description = "A potion that heals 50 health.";
+            _description = "A potion that heals 25 health.";
         }
 
         public override void Use(GameCharacter character)
         {
             //We can adjust the values to achieve a better balance. AH
-            character.GetAttributes()._health += 50.0;
+            character.GetAttributes()._health += 25.0;
             //Test text
-            Console.WriteLine("The potion healed 50 health!");
+            Console.WriteLine("The potion healed 25 health!");
 
         }
     }
