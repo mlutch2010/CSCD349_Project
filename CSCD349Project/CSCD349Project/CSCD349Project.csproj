@@ -57,6 +57,8 @@
     <Compile Include="LandShark.cs" />
     <Compile Include="LandSharkChomp.cs" />
     <Compile Include="LandSharkEvade.cs" />
+    <Compile Include="LargeEnergyPotion.cs" />
+    <Compile Include="LargeHealthPotion.cs" />
     <Compile Include="Leprachaun.cs" />
     <Compile Include="LeprachaunDisappear.cs" />
     <Compile Include="LeprachaunThrowGold.cs" />
@@ -66,6 +68,8 @@
     <Compile Include="MageCastShield.cs" />
     <Compile Include="MageShootLightning.cs" />
     <Compile Include="Map.cs" />
+    <Compile Include="MediumEnergyPotion.cs" />
+    <Compile Include="MediumHealthPotion.cs" />
     <Compile Include="Messaging.cs" />
     <Compile Include="NotEnoughEnergyException.cs" />
     <Compile Include="NullAttack.cs" />
@@ -81,6 +85,7 @@
     <Compile Include="Scout.cs" />
     <Compile Include="ScoutRoll.cs" />
     <Compile Include="ScoutShootPlainArrow.cs" />
+    <Compile Include="SmallEnergyPotion.cs" />
     <Compile Include="SmallHealthPotion.cs" />
     <Compile Include="tester.cs" />
     <Compile Include="Warrior.cs" />
