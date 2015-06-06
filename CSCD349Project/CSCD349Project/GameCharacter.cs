@@ -8,13 +8,15 @@ namespace CSCD349Project
         private CharacterAttributes _Attributes;
         private Party _Party;
         private string _Name;
- 
+        private static Messaging _Messaging;
         public GameCharacter(string name) : base(name)
         {
             _Name = name;
             _ID = noInstances ++;
         }
        
+        public static void SetMessaging(Messaging _messaging){_Messaging = _messaging;}
+
         // This constructor is used to create a GamaCharacter instance with a particular id for the purposes 
         // of searching for a character in a list.
         public GameCharacter(int id) : base(""){_ID = id;}
@@ -34,16 +36,24 @@ namespace CSCD349Project
                     attackerAttributes._energy -= activeAttack._energyRequired;
                     
                     attackDamage = (attackerAttributes._power) * activeAttack._baseDamage;
-                    Console.WriteLine(this.GetName() + "\'s attack upon " + enemy.GetName() + " was successful for " + attackDamage + " attack damage!");
+                    AddMessage(this.GetName() + "\'s attack upon " + enemy.GetName() + " was successful for " + attackDamage + " attack damage!");
 
                     enemy.PerformActiveDefense(attackDamage);
-                    Console.WriteLine(this.GetName() + "\'s attack and " + enemy.GetName() + "\'s defense are completed. Moving on.\n\n");
+                    AddMessage(this.GetName() + "\'s attack and " + enemy.GetName() + "\'s defense are completed. Moving on.\n\n");
                 }
                 else//Attack Unsuccesful
-                    Console.WriteLine(this.GetName() + "\'s attack missed " + enemy.GetName() + "!");
+                    AddMessage(this.GetName() + "\'s attack missed " + enemy.GetName() + "!");
             }
             else//Insufficient Energy
-                Console.WriteLine(this.GetName() + "is too tired to use " + activeAttack._abilityName + " on " + enemy.GetName());
+                AddMessage(this.GetName() + "is too tired to use " + activeAttack._abilityName + " on " + enemy.GetName());
+        }
+
+        private void AddMessage(string thisMessage)
+        {
+            if(_Messaging != null)
+            {
+                _Messaging.AddMessage(thisMessage);
+            }
         }
 
         public void PerformActiveDefense(Double incomingDamage)
@@ -56,13 +66,13 @@ namespace CSCD349Project
             if (AbilitySuccessful(activeDefense._successRate))
             {
                 damagePrevented += activeDefense._armorIncrease;
-                Console.WriteLine(this.GetName() + "'s defense was successful for a " + damagePrevented + " damage decrease!");
+                AddMessage(this.GetName() + "'s defense was successful for a " + damagePrevented + " damage decrease!");
 
                 defenderAttributes._health -= Math.Max(0, incomingDamage - damagePrevented);
             }
             else
             {
-                Console.WriteLine(this.GetName() + "'s defense was unsuccessful! No damage will be prevented!");
+                AddMessage(this.GetName() + "'s defense was unsuccessful! No damage will be prevented!");
                 defenderAttributes._health -= Math.Max(0, incomingDamage);
             }
         }
@@ -72,7 +82,7 @@ namespace CSCD349Project
             var rnd = new Random();
             int percentChance = rnd.Next(-1, 101);//generate random number between 0 and 100
 
-            Console.WriteLine("In AbilitySuccesful(), Random number is: {0}\nabilitySuccessRate is: {1}", percentChance, abilitySuccessRate);
+            AddMessage("In AbilitySuccesful(), Random number is: " + percentChance + "\nabilitySuccessRate is: " + abilitySuccessRate);
 
             if (percentChance <= abilitySuccessRate * 100)
                 return true;

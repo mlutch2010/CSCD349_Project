@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CSCD349Project
 {
-    class Messaging
+    public class Messaging
     {
 
         private List<string> messages;   
@@ -16,18 +16,18 @@ namespace CSCD349Project
             messages = new List<string>();
             lastMessage = 0;
         }
-        public void addMessage(string newMessage)
+        public void AddMessage(string newMessage)
         {
             if(newMessage != null)
                 messages.Add(newMessage);
         }
     
-        public string getLatestMessages()
+        public string[] getLatestMessages()
         {
-            string output = "";
+            List<string> output = new List<string>();
             for (; lastMessage < messages.Count; ++lastMessage)
-                output += messages[lastMessage] + "\n";
-            return output;
+                output.Add(messages[lastMessage]);
+            return output.ToArray();
         }
     
     

@@ -8,5 +8,12 @@ namespace CSCD349Project
 {
     class LeprachaunDisappear: DefensiveAbility
     {
+        public LeprachaunDisappear()
+        {
+            _AbilityName = "disappear";
+            _ArmorIncrease = 6;
+            _SuccessRate = 0.7;
+        }
+
     }
 }
