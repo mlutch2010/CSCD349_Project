@@ -10,6 +10,7 @@ namespace CSCD349Project
     {
         public ScoutRoll()
         {
+            _AbilityName = "scout roll";
             _ArmorIncrease = 100;//100 armor points
             _SuccessRate = 0.80;//80%
         }

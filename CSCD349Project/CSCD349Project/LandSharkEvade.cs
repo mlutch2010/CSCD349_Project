@@ -10,6 +10,7 @@ namespace CSCD349Project
     {
         public LandSharkEvade()
         {
+            _AbilityName = "evade";
             _ArmorIncrease = 5.0;//5 armor points
             _SuccessRate = 0.90;//90%
         }

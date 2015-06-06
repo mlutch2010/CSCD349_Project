@@ -9,17 +9,24 @@ namespace CSCD349Project
         private Party _Party;
         private string _Name;
         private static Messaging _Messaging;
+        private static Random random;
+
         public GameCharacter(string name) : base(name)
         {
             _Name = name;
             _ID = noInstances ++;
+            random = new Random();
         }
        
         public static void SetMessaging(Messaging _messaging){_Messaging = _messaging;}
 
         // This constructor is used to create a GamaCharacter instance with a particular id for the purposes 
         // of searching for a character in a list.
-        public GameCharacter(int id) : base(""){_ID = id;}
+        public GameCharacter(int id) : base("")
+        {
+            _ID = id;
+            random = new Random();
+        }
     
         public void PerformActiveAttack(GameCharacter enemy)
         {
@@ -36,13 +43,13 @@ namespace CSCD349Project
                     attackerAttributes._energy -= activeAttack._energyRequired;
                     
                     attackDamage = (attackerAttributes._power) * activeAttack._baseDamage;
-                    AddMessage(this.GetName() + "\'s attack upon " + enemy.GetName() + " was successful for " + attackDamage + " attack damage!");
+                    AddMessage(this.GetName() + "\'s " + activeAttack.ToString() + " attack upon " + enemy.GetName() + " was successful for " + attackDamage + " attack damage!");
 
                     enemy.PerformActiveDefense(attackDamage);
-                    AddMessage(this.GetName() + "\'s attack and " + enemy.GetName() + "\'s defense are completed. Moving on.\n\n");
+                    //AddMessage(this.GetName() + "\'s attack and " + enemy.GetName() + "\'s defense are completed. Moving on.\n\n");
                 }
                 else//Attack Unsuccesful
-                    AddMessage(this.GetName() + "\'s attack missed " + enemy.GetName() + "!");
+                    AddMessage(this.GetName() + "\'s " + activeAttack.ToString() + " attack missed " + enemy.GetName() + "!");
             }
             else//Insufficient Energy
                 AddMessage(this.GetName() + "is too tired to use " + activeAttack._abilityName + " on " + enemy.GetName());
@@ -66,23 +73,24 @@ namespace CSCD349Project
             if (AbilitySuccessful(activeDefense._successRate))
             {
                 damagePrevented += activeDefense._armorIncrease;
-                AddMessage(this.GetName() + "'s defense was successful for a " + damagePrevented + " damage decrease!");
+                AddMessage(this.GetName() + "'s " + activeDefense.ToString() + " defense was successful for a " + damagePrevented + " damage decrease!");
 
                 defenderAttributes._health -= Math.Max(0, incomingDamage - damagePrevented);
+                AddMessage(this.GetName() + " lost " + Math.Max(0,incomingDamage - damagePrevented) + " health points");
             }
             else
             {
-                AddMessage(this.GetName() + "'s defense was unsuccessful! No damage will be prevented!");
+                AddMessage(this.GetName() + "'s " + activeDefense.ToString() + "defense was unsuccessful! No damage will be prevented!");
                 defenderAttributes._health -= Math.Max(0, incomingDamage);
+                AddMessage(this.GetName() + " lost " + Math.Max(0,incomingDamage) + " health points");
             }
         }
 
         private bool AbilitySuccessful(double abilitySuccessRate)
         {
-            var rnd = new Random();
-            int percentChance = rnd.Next(-1, 101);//generate random number between 0 and 100
-
-            AddMessage("In AbilitySuccesful(), Random number is: " + percentChance + "\nabilitySuccessRate is: " + abilitySuccessRate);
+            int percentChance = random.Next(101);//-1, 101);//generate random number between 0 and 100
+            
+            //AddMessage("In AbilitySuccesful(), Random number is: " + percentChance + " abilitySuccessRate is: " + abilitySuccessRate);
 
             if (percentChance <= abilitySuccessRate * 100)
                 return true;

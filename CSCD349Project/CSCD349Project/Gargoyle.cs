@@ -8,7 +8,7 @@ namespace CSCD349Project
 {
     class Gargoyle: GameCharacter
     {
-        public Gargoyle(): base("Land Shark")
+        public Gargoyle(): base("Gargoyle")
         {
             CharacterAttributes myAttributes = new CharacterAttributes();
 

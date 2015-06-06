@@ -10,6 +10,7 @@ namespace CSCD349Project
     {
         public WarriorLiftShield()
         {
+            _AbilityName = "list shield";
             _ArmorIncrease = 5.0;//5 armor points
             _SuccessRate = 0.90;//90%
         }

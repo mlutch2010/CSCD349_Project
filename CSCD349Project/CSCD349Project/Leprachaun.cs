@@ -13,8 +13,8 @@ namespace CSCD349Project
         {
             CharacterAttributes myAttributes = new CharacterAttributes();
 
-            myAttributes._basehealth = 100;
-            myAttributes._health = 100;
+            myAttributes._basehealth = 90;
+            myAttributes._health = 90;
             myAttributes._baseEnergy = 20;
             myAttributes._energy = 20;
             myAttributes._power = 1;
@@ -24,8 +24,8 @@ namespace CSCD349Project
             SetAttributes(myAttributes);
 
             //Add the abilities this concrete GameCharacter has by default
-            base.GetAttributes().AddAttack(new LandSharkChomp());
-            base.GetAttributes().AddDefense(new LandSharkEvade());
+            base.GetAttributes().AddAttack(new LeprachaunThrowGold());
+            base.GetAttributes().AddDefense(new LeprachaunDisappear());
         }
     }
 }
