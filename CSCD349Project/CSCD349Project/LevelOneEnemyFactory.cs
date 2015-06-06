@@ -8,13 +8,15 @@ namespace CSCD349Project
 {
     class LevelOneEnemyFactory : AbstractEnemyFactory
     {
+        private static Random rand;
         public LevelOneEnemyFactory()
-        { }
+        { 
+            rand = new Random();
+        }
 
         override public GameCharacter GetRandomGameCharacter()
         {
-            Random rnd = new Random();
-            int choice = rnd.Next(3);
+            int choice = rand.Next(3);
             if(choice == 0)
             {
                 return new LandShark();
