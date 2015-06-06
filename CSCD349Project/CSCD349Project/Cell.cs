@@ -106,7 +106,7 @@ using System.Collections.Generic;
                 {
                     _Enemies.AddCharacter(_MyMap.GetEnemyFactory().GetRandomGameCharacter());
                 }
-                else if (choice > 6 || choice <= 9)
+                else if (choice > 6 && choice <= 9)
                 {
                     for (int i = 0; i < 2; i++)
                     {
