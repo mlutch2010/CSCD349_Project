@@ -10,7 +10,7 @@ namespace CSCD349Project
     {
         private int[] _Dimensions;
         private Cell[,] _Cells;
-        private Cell _ActiveCell;
+        private Cell _ActiveCell, _StartCell, _FinishCell;
         private AbstractEnemyFactory _EnemyFactory;
         private AbstractItemFactory _ItemFactory;
 
@@ -81,9 +81,11 @@ namespace CSCD349Project
                             {
                                 case 's'://start cell
                                     _Cells[r,c] = new Cell(curCoords, this, true, true, false);
+                                    _StartCell = _Cells[r,c];
                                     break;
                                 case 'f'://finish cell
                                     _Cells[r, c] = new Cell(curCoords, this, true, false, true);
+                                    _FinishCell = _Cells[r,c];
                                     break;
                                 case 't'://traversable cell
                                     _Cells[r, c] = new Cell(curCoords, this, true, false, false);
@@ -138,6 +140,16 @@ namespace CSCD349Project
         public Cell _activeCell
         {
             get { return _ActiveCell; }
+        }
+        
+        public Cell _startCell
+        {
+            get { return _StartCell; }
+        }
+        
+        public Cell _finishCell
+        {
+            get { return _finishCell; }
         }
 
 
