@@ -8,11 +8,14 @@ namespace CSCD349Project
 {
     class LevelOneItemFactory : AbstractItemFactory
     {
-        public LevelOneItemFactory() { }
+        private static Random rand;
+        public LevelOneItemFactory() 
+        {
+            rand = new Random();
+        }
         public override GameItem GetRandomItem()
         {
-            Random rnd = new Random();
-            int choice = rnd.Next(18);
+            int choice = rand.Next(18);
             if(choice < 5)
             {
                 return new SmallHealthPotion();
