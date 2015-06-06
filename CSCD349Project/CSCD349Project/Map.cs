@@ -157,7 +157,7 @@ namespace CSCD349Project
         {
             string output = TraversableToString();
             output += NOEnemiesToString();
-            output += NOEnemiesToString();
+            output += NOItemsToString();
 
             return output;
         }
