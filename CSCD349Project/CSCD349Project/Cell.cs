@@ -5,6 +5,7 @@ using System.Collections.Generic;
 {
     public sealed class Cell
     {
+        private static Random rand;
         private Map _MyMap;
         private int[] _Coordinates;
         private bool _Traversable;
@@ -44,6 +45,7 @@ using System.Collections.Generic;
             _MyMap = thisMap;
             _Coordinates = coordinates;
             _Traversable = traversable;
+            rand = new Random();
 
             if (start == true)
             {
@@ -95,8 +97,7 @@ using System.Collections.Generic;
             //Test to see if the cell is traversable. We don't need to generate enemies in the wall!
             if(_Traversable)
             {
-                Random rnd = new Random();
-                int choice = rnd.Next(12);
+                int choice = rand.Next(12);
                 if (choice <= 3)
                 {
                     //Empty party, no added enemies.
@@ -133,8 +134,7 @@ using System.Collections.Generic;
         {
             if(_Traversable)
             {
-                Random rnd = new Random();
-                int choice = rnd.Next(5);
+                int choice = rand.Next(5);
                 if (choice < 2)
                 {
                     //Empty list, no items added.
