@@ -89,9 +89,12 @@ namespace CSCD349Project
         private void  Initialize()
         {
             // Read in and set up maps
+            //Console.WriteLine(_Maps[0]);
+            
+            // Randomly generate items and enemy parties in the map
+            _Maps[0].PopulateMap();
+
             Console.WriteLine(_Maps[0]);
-                // Set up cells in maps
-                // Randomly generate items and enemy parties in the map
 
             // Place good party in map (active cell)
 
@@ -125,6 +128,5 @@ namespace CSCD349Project
         {
             //MessageBox.Show(message);
         }
-    
     }
 }
