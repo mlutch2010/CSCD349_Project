@@ -13,39 +13,47 @@ using System.Collections.Generic;
         private bool _IsStart;
         private bool _IsFinish;
 
-        /*
+        
         public bool _isStart
         {
             get { return _IsStart; }
-            set { _IsStart = _isStart; }
+            set
+            { 
+                if(_isStart != null)
+                    _IsStart = _isStart;
+            }
         }
 
         public bool _isFinish
         {
             get { return _IsFinish; }
-            set { _IsFinish = _isFinish; }
+            set
+            { 
+                if(_isFinish!=null)
+                    _IsFinish = _isFinish; 
+            }
         }
-         * */
+
 
         /*
          * traversable=true
          * startOrFinish: true->start, false->finish, null->neither
          * */
-        public Cell(int[] coordinates, Map thisMap, bool traversable, bool startOrFinish)
+        public Cell(int[] coordinates, Map thisMap, bool traversable, bool start, bool finish)
         {
             _MyMap = thisMap;
             _Coordinates = coordinates;
             _Traversable = traversable;
 
-            if (startOrFinish == true)
+            if (start == true)
             {
                 _IsStart = true;
                 _IsFinish = false;
             }
-            else if (startOrFinish == false)
+            else if (finish == true)
             {
-                _IsStart = true;
-                _IsFinish = false;
+                _IsStart = false;
+                _IsFinish = true;
             }
             else
             {

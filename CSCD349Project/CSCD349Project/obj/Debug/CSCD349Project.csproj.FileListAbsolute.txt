@@ -10,7 +10,6 @@ C:\Users\Zachary\Google Drive\0_SCHOOL\0_Spring 2015\CSCD349_GitHub-Project\CSCD
 C:\Users\Zachary\Google Drive\0_SCHOOL\0_Spring 2015\CSCD349_GitHub-Project\CSCD349_Project\CSCD349Project\CSCD349Project\obj\Debug\CSCD349Project.pdb
 C:\Users\Zachary\Google Drive\0_SCHOOL\0_Spring 2015\CSCD349_GitHub-Project\CSCD349_Project\CSCD349Project\CSCD349Project\bin\Debug\CSCD349Project.exe
 C:\Users\Zachary\Google Drive\0_SCHOOL\0_Spring 2015\CSCD349_GitHub-Project\CSCD349_Project\CSCD349Project\CSCD349Project\bin\Debug\CSCD349Project.pdb
-C:\Users\Zachary\Google Drive\0_SCHOOL\0_Spring 2015\CSCD349_GitHub-Project\CSCD349_Project\CSCD349Project\CSCD349Project\obj\Debug\CSCD349Project.csprojResolveAssemblyReference.cache
 C:\Users\zach\Google Drive\0_SCHOOL\0_Spring 2015\CSCD349_GitHub-Project\CSCD349_Project\CSCD349Project\CSCD349Project\obj\Debug\CSCD349Project.exe
 C:\Users\zach\Google Drive\0_SCHOOL\0_Spring 2015\CSCD349_GitHub-Project\CSCD349_Project\CSCD349Project\CSCD349Project\obj\Debug\CSCD349Project.pdb
 C:\Users\zach\Google Drive\0_SCHOOL\0_Spring 2015\CSCD349_GitHub-Project\CSCD349_Project\CSCD349Project\CSCD349Project\bin\Debug\CSCD349Project.exe
@@ -20,3 +19,5 @@ C:\Users\Audreys\Documents\CSCD349_Project\CSCD349Project\CSCD349Project\bin\Deb
 C:\Users\Audreys\Documents\CSCD349_Project\CSCD349Project\CSCD349Project\obj\Debug\CSCD349Project.csprojResolveAssemblyReference.cache
 C:\Users\Audreys\Documents\CSCD349_Project\CSCD349Project\CSCD349Project\obj\Debug\CSCD349Project.Properties.Resources.resources
 C:\Users\Audreys\Documents\CSCD349_Project\CSCD349Project\CSCD349Project\obj\Debug\CSCD349Project.csproj.GenerateResource.Cache
+C:\Users\Zachary\Google Drive\0_SCHOOL\0_Spring 2015\CSCD349_GitHub-Project\CSCD349_Project\CSCD349Project\CSCD349Project\obj\Debug\CSCD349Project.Properties.Resources.resources
+C:\Users\Zachary\Google Drive\0_SCHOOL\0_Spring 2015\CSCD349_GitHub-Project\CSCD349_Project\CSCD349Project\CSCD349Project\obj\Debug\CSCD349Project.csproj.GenerateResource.Cache

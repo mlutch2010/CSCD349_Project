@@ -23,7 +23,7 @@ namespace CSCD349Project
             {
                 for(c = 0; c < dimensions[1] - 1; ++c)
                 {
-                    _Cells[r, c] = new Cell(new int[] { r, c }, this, true, null);
+                    _Cells[r, c] = new Cell(new int[] { r, c }, this, true, false, false);
                 }
             }
             _EnemyFactory = enemyFactory;
@@ -43,13 +43,12 @@ namespace CSCD349Project
             Cell[,] cells;
             int noRows = 0;
             int noCols = 0;
-            char tCellCode, ntCellCode;//t => traversable, nt => non-traversable
 
             // read in a map from a map file
             try
             {
                 // get dimensions
-                using (StreamReader sr = new StreamReader(mapFile))
+                using (StringReader sr = new StringReader(mapFile))
                 {
                     string line = "";
                     char[] lineChars;
@@ -59,9 +58,10 @@ namespace CSCD349Project
                     //Read in dimensions
                     if ((line = sr.ReadLine()) != null)
                         noRows = Convert.ToInt32(line);
-
                     if ((line = sr.ReadLine()) != null)
                         noCols = Convert.ToInt32(line);
+
+                    _Dimensions = new int[]{noRows, noCols};
 
                     _Cells = new Cell[noRows, noCols];
 
@@ -74,18 +74,21 @@ namespace CSCD349Project
                         {
                             curCoords[0] = r; curCoords[1] = c;
                             curChar = lineChars[c];
+                            //int[] coordinates, Map thisMap, bool traversable, bool start, bool finish
                             switch(curChar)
                             {
                                 case 's'://start cell
-                                    _Cells[r,c] = new Cell();
+                                    _Cells[r,c] = new Cell(curCoords, this, true, true, false);
                                     break;
                                 case 'f'://finish cell
+                                    _Cells[r, c] = new Cell(curCoords, this, true, false, true);
                                     break;
                                 case 't'://traversable cell
+                                    _Cells[r, c] = new Cell(curCoords, this, true, false, false);
                                     break;
                                 case 'n'://nontraversable cell
+                                    _Cells[r, c] = new Cell(curCoords, this, false, false, false);
                                     break;
-
                             }
                         }
                     }
@@ -101,15 +104,17 @@ namespace CSCD349Project
             }
             //thisMap = new Map(new int[] { noRows, noCols });
         }
-
-        public void GenerateLevel()
+        public void PopulateMap()
         {
-            for (int i = 0; i < _Dimensions[0]-1; ++i)
+            for (int r = 0; r < _Dimensions[0]; ++r)
             {
-                for(int j = 0; j < _Dimensions[1]-1; ++j)
+                for(int c = 0; c < _Dimensions[1]; ++c)
                 {
-                    _Cells[i, j].GenerateEnemies();
-                    _Cells[i, j].GenerateItems();
+                    if (_Cells[r, c]._traversable && !_Cells[r, c]._isStart && !_Cells[r, c]._isFinish)
+                    {
+                        _Cells[r, c].GenerateEnemies();
+                        _Cells[r, c].GenerateItems();
+                    }
                 }
             }
         }
@@ -146,14 +151,14 @@ namespace CSCD349Project
         {
             string output = "";
             int r, c;
-            for (r = 0; r < _Dimensions[0] - 1; ++r)
+            for (r = 0; r < _Dimensions[0]; ++r)
             {
-                for (c = 0; c < _Dimensions[1] - 1; ++c)
+                for (c = 0; c < _Dimensions[1]; ++c)
                 {
                     //_Cells[r, c] = new Cell(new int[] { r, c }, this);
-                    if(_Cells[r,c] == _StartCell)
+                    if(_Cells[r,c]._isStart)
                         output += "S";
-                    else if(_Cells[r,c] == _FinishCell)
+                    else if(_Cells[r,c]._isFinish)
                         output += "F";
                     else if (_Cells[r, c] == _ActiveCell)
                         output += "X";

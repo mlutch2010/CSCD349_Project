@@ -14,13 +14,12 @@ namespace CSCD349Project
     {
         private int noLevels = 1;
         private int currentLevel = 1;
-        private List<Map> maps;
+        private List<Map> _Maps;
 
         public static void Main(string[]args)
         {
             GameEngine thisGame = new GameEngine();
-
-            //thisGame.Initialize();
+            thisGame.Initialize();
             //thisGame.Run();
 
             Console.ReadKey();
@@ -28,16 +27,17 @@ namespace CSCD349Project
 
         public GameEngine()
         {
-            maps = new List<Map>();
+            _Maps = new List<Map>();
 
             // create the maps
             for (int i = 0; i < noLevels; ++i)
-                maps.Add(new Map(CSCD349Project.Properties.Resources.level0));
+                _Maps.Add(new Map(CSCD349Project.Properties.Resources.level0));
         }
 
         private void  Initialize()
         {
             // Read in and set up maps
+            Console.WriteLine(_Maps[0]);
                 // Set up cells in maps
                 // Randomly generate items and enemy parties in the map
 
@@ -52,7 +52,7 @@ namespace CSCD349Project
         {
             if (currentLevel < noLevels)
             {
-                Map thisLevel = maps[currentLevel - 1];
+                Map thisLevel = _Maps[currentLevel - 1];
                 Cell thisCell;
 
                 // If active cell is finish then display victory message and move to next map
